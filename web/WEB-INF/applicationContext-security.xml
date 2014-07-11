@@ -1,0 +1,161 @@
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+             xmlns:beans="http://www.springframework.org/schema/beans"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:context="http://www.springframework.org/schema/context"
+             xsi:schemaLocation="http://www.springframework.org/schema/beans
+                 http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+                 http://www.springframework.org/schema/security
+                 http://www.springframework.org/schema/security/spring-security-3.1.xsd
+                 http://www.springframework.org/schema/context
+                 http://www.springframework.org/schema/context/spring-context-3.0.xsd ">
+
+    <http auto-config="true" use-expressions="true">
+
+        <intercept-url pattern="/login.html" access="permitAll" />
+        <intercept-url pattern="/logout.html" access="permitAll" />
+        <intercept-url pattern="/resources/**" access="permitAll" />
+        <intercept-url pattern="/admin/sendAnEmail.html" access="permitAll" />
+        <intercept-url pattern="/admin/resetPassword.html" access="permitAll" />
+        <intercept-url pattern="/admin/emailRecovery.html" access="permitAll" />
+
+        <intercept-url pattern="/home.html" access="permitAll" />
+        <intercept-url pattern="/about.html" access="permitAll" />
+        <intercept-url pattern="/feature.html" access="permitAll" />
+        <intercept-url pattern="/support.html" access="permitAll" />
+        <intercept-url pattern="/contact.html" access="permitAll" />
+        <intercept-url pattern="/registration.html" access="permitAll" />
+
+        <!--   <intercept-url pattern="/admin/**" access="hasAnyRole('ROLE_ADMIN')"/>
+           <intercept-url pattern="/icga/**" access="hasAnyRole('ROLE_ADMIN')"/>
+   -->
+        <!--Review assignment permission block start-->
+        <intercept-url pattern="/realtime/RealtimeMonitoringWorkflow.html" access="hasAnyRole('EMPLOYEE','ROLE_ADMIN', 'IA_ANALYST', 'IA_MANAGER', 'LEGAL')"/>
+        <intercept-url pattern="/realtime/realTimeSummaryView.html" access="hasAnyRole('EMPLOYEE', 'COMPLIANCE', 'ROLE_ADMIN', 'IA_ANALYST', 'IA_MANAGER', 'LEGAL')"/>
+        <intercept-url pattern="/realtime/doCompleteAssignment.html" access="hasAnyRole('EMPLOYEE', 'COMPLIANCE', 'ROLE_ADMIN', 'IA_ANALYST', 'IA_MANAGER', 'LEGAL')"/>
+        <intercept-url pattern="/realtime/assignmentList.html" access="hasAnyRole('EMPLOYEE', 'ROLE_ADMIN', 'IA_ANALYST', 'IA_MANAGER', 'LEGAL')"/>
+        <intercept-url pattern="/realtime/getAssignmentReview.html" access="hasAnyRole('EMPLOYEE', 'ROLE_ADMIN', 'IA_ANALYST', 'IA_MANAGER', 'LEGAL')"/>
+        <intercept-url pattern="/realtime/trxCountListInDetails.html" access="hasAnyRole('EMPLOYEE', 'COMPLIANCE', 'ROLE_ADMIN', 'IA_ANALYST', 'IA_MANAGER', 'LEGAL')"/>
+        <intercept-url pattern="/realtime/trxListInDetails.html" access="hasAnyRole('EMPLOYEE', 'COMPLIANCE', 'ROLE_ADMIN', 'IA_ANALYST', 'IA_MANAGER', 'LEGAL')"/>
+        <intercept-url pattern="/realtime/ajaxCallForNewRiskAssesment.html" access="hasAnyRole('EMPLOYEE', 'COMPLIANCE', 'ROLE_ADMIN', 'IA_ANALYST', 'IA_MANAGER', 'LEGAL')"/>
+        <intercept-url pattern="/realtime/transactionApprove.html" access="hasAnyRole('ROLE_ADMIN', 'IA_ANALYST', 'IA_MANAGER')"/>
+        <intercept-url pattern="/realtime/getTrxApprovalJASONList.html" access="hasAnyRole('ROLE_ADMIN', 'IA_ANALYST', 'IA_MANAGER')"/>
+        <intercept-url pattern="/realtime/transactionSearch.html" access="hasAnyRole('ROLE_ADMIN', 'IA_ANALYST', 'IA_MANAGER')"/>
+        <intercept-url pattern="/realtime/myRealTimeSummaryView.html" access="hasAnyRole('ROLE_ADMIN', 'EMPLOYEE', 'IA_ANALYST', 'IA_MANAGER','COMPLIANCE', 'LEGAL')"/>
+        <intercept-url pattern="/realtime/myAssignmentList.html" access="hasAnyRole('ROLE_ADMIN', 'EMPLOYEE', 'IA_MANAGER', 'IA_ANALYST', 'COMPLIANCE', 'LEGAL')"/>
+
+        <intercept-url pattern="/realtime/groupingColumn.html" access="hasAnyRole('EMPLOYEE','COMPLIANCE', 'ROLE_ADMIN', 'LEGAL', 'IA_ANALYST', 'IA_MANAGER')"/>
+        <intercept-url pattern="/realtime/doUnassignmentProject.html" access="hasAnyRole('ROLE_ADMIN', 'IA_ANALYST')"/>
+
+        <!--Training permission block start-->
+
+        <intercept-url pattern="/training/trainingList.html" access="hasAnyRole('EMPLOYEE', 'COMPLIANCE','ROLE_ADMIN', 'IA_ANALYST', 'IA_MANAGER', 'LEGAL')"/>
+        <intercept-url pattern="/training/startTest.html" access="hasAnyRole('EMPLOYEE','COMPLIANCE', 'ROLE_ADMIN', 'IA_ANALYST', 'IA_MANAGER', 'LEGAL')"/>
+        <intercept-url pattern="/training/trainingCertificate.html" access="hasAnyRole('EMPLOYEE','COMPLIANCE', 'ROLE_ADMIN', 'IA_ANALYST', 'IA_MANAGER')"/>
+        <intercept-url pattern="/training/trainingRetake.html" access="hasAnyRole('EMPLOYEE', 'COMPLIANCE','ROLE_ADMIN', 'IA_ANALYST', 'IA_MANAGER')"/>
+        <intercept-url pattern="/training/downloadCertificate.html" access="hasAnyRole('EMPLOYEE', 'ROLE_ADMIN', 'IA_ANALYST', 'IA_MANAGER')"/>
+        <intercept-url pattern="/training/printCertificate.html" access="hasAnyRole('EMPLOYEE','COMPLIANCE', 'ROLE_ADMIN', 'IA_ANALYST', 'IA_MANAGER')"/>
+        <intercept-url pattern="/training/trainingShow.html" access="hasAnyRole('EMPLOYEE','COMPLIANCE', 'ROLE_ADMIN', 'IA_ANALYST', 'IA_MANAGER')"/>
+        <intercept-url pattern="/training/getJASONforTrainingList.html" access="hasAnyRole('EMPLOYEE', 'IA_ANALYST', 'IA_MANAGER', 'COMPLIANCE','ROLE_ADMIN', 'LEGAL')"/>
+        <intercept-url pattern="/training/trainingQuestion.html" access="hasAnyRole('ROLE_ADMIN', 'LEGAL', 'COMPLIANCE' )"/>
+        <intercept-url pattern="/training/addAQuestion.html" access="hasAnyRole('ROLE_ADMIN', 'LEGAL', 'COMPLIANCE')"/>
+        <intercept-url pattern="/training/editQuestionAjax.html" access="hasAnyRole('ROLE_ADMIN', 'LEGAL', 'COMPLIANCE')"/>
+        <intercept-url pattern="/training/ajaxSveTrainingDetails.html" access="hasAnyRole('ROLE_ADMIN', 'LEGAL', 'COMPLIANCE')"/>
+        <intercept-url pattern="/training/deleteQuestionAjax.html" access="hasAnyRole('ROLE_ADMIN', 'LEGAL', 'COMPLIANCE')"/>
+        <intercept-url pattern="/training/deleteTraining.html" access="hasAnyRole('ROLE_ADMIN', 'LEGAL', 'COMPLIANCE')"/>
+        <intercept-url pattern="/training/uploadTraining.html" access="hasAnyRole('ROLE_ADMIN', 'LEGAL', 'COMPLIANCE')"/>
+        <intercept-url pattern="/training/trainingPieChart.html" access="hasAnyRole('IA_ANALYST','COMPLIANCE', 'ROLE_ADMIN')"/>
+
+        <!--Training permission block end -->
+
+        <!--Policy permission block start-->
+
+        <intercept-url pattern="/policy/policyList.html" access="hasAnyRole('EMPLOYEE', 'IA_ANALYST', 'IA_MANAGER','COMPLIANCE','LEGAL', 'ROLE_ADMIN')"/>
+        <intercept-url pattern="/policy/getJASONforPolicyList.html" access="hasAnyRole('EMPLOYEE', 'IA_ANALYST', 'IA_MANAGER', 'COMPLIANCE','LEGAL', 'ROLE_ADMIN')"/>
+        <intercept-url pattern="/policy/policyShow.html" access="hasAnyRole('EMPLOYEE', 'COMPLIANCE', 'IA_ANALYST', 'IA_MANAGER', 'ROLE_ADMIN','LEGAL')"/>
+        <intercept-url pattern="/policy/underStandPolicy.html" access="hasAnyRole('EMPLOYEE', 'COMPLIANCE', 'IA_ANALYST', 'IA_MANAGER', 'ROLE_ADMIN', 'LEGAL' )"/>
+        <intercept-url pattern="/policy/uploadPolicy.html" access="hasAnyRole('COMPLIANCE', 'ROLE_ADMIN', 'LEGAL')"/>
+        <intercept-url pattern="/policy/deletePolicy.html" access="hasAnyRole('COMPLIANCE', 'LEGAL', 'ROLE_ADMIN')"/>
+        <intercept-url pattern="/policy/downloadTransactionPolicy.html" access="hasAnyRole('COMPLIANCE', 'LEGAL', 'ROLE_ADMIN','IA_ANALYST', 'IA_MANAGER')"/>
+
+        <!--Policy permission block end-->
+
+        <!-- Report permission block start -->
+        <intercept-url pattern="/report/policyReviewCertification.html" access="hasAnyRole('IA_ANALYST', 'COMPLIANCE', 'ROLE_ADMIN')"/>
+        <intercept-url pattern="/report/makePieChartForPolicyReviewCertification.html" access="hasAnyRole('COMPLIANCE','ROLE_ADMIN')"/>
+        <intercept-url pattern="/report/trainingReview.html" access="hasAnyRole('IA_ANALYST', 'COMPLIANCE','ROLE_ADMIN')"/>
+        <intercept-url pattern="/report/pieChartPrint.html" access="hasAnyRole('IA_ANALYST', 'COMPLIANCE','ROLE_ADMIN')"/>
+        <!-- Report permission block end -->
+
+        <!-- ICGA permission start.-->
+
+        <intercept-url pattern="/icga/existingCtrlGapAnalysis.html" access="hasAnyRole('IA_ANALYST','IA_MANAGER', 'ROLE_ADMIN')"/>
+        <intercept-url pattern="/icga/getJASONforExistingControlList.html" access="hasAnyRole('IA_ANALYST', 'IA_MANAGER','ROLE_ADMIN')"/>
+        <intercept-url pattern="/icga/getJASONforProjectWiseControlList.html" access="hasAnyRole('IA_ANALYST','IA_MANAGER', 'ROLE_ADMIN')"/>
+        <intercept-url pattern="/icga//InternalCtrlGapAnalysisAC.html" access="hasAnyRole('IA_ANALYST', 'IA_MANAGER','ROLE_ADMIN')"/>
+
+        <!-- ICGA permission end.-->
+
+        <!-- Risk assesment permission start.-->
+        <intercept-url pattern="/riskasst/ContinueRiskAssessmentWorkFlow.html" access="hasAnyRole('COMPLIANCE', 'ROLE_ADMIN')"/>
+        <intercept-url pattern="/riskasst/weightedScreen.html" access="hasAnyRole('COMPLIANCE', 'ROLE_ADMIN')"/>
+        <intercept-url pattern="/riskasst/GlobalMap.html" access="hasAnyRole('COMPLIANCE', 'ROLE_ADMIN')"/>
+        <intercept-url pattern="/riskasst/ajaxCall.html" access="hasAnyRole('COMPLIANCE', 'ROLE_ADMIN')"/>
+        <intercept-url pattern="/riskasst/getJASONforContinueRiskAss.html" access="hasAnyRole('COMPLIANCE', 'ROLE_ADMIN')"/>
+        <intercept-url pattern="/riskasst/ProactiveWorkflow.html" access="hasAnyRole('COMPLIANCE', 'ROLE_ADMIN')"/>
+        <intercept-url pattern="/riskasst/getJASONforProactiveWorkflowList.html" access="hasAnyRole('COMPLIANCE', 'ROLE_ADMIN')"/>
+        <intercept-url pattern="/riskasst/emailTransactionDetail.html" access="hasAnyRole('LEGAL', 'EMPLOYEE','COMPLIANCE', 'ROLE_ADMIN', 'IA_ANALYST', 'IA_MANAGER')"/>
+        <intercept-url pattern="/riskasst/printTransactionDetail.html" access="hasAnyRole('LEGAL', 'EMPLOYEE','COMPLIANCE', 'ROLE_ADMIN', 'IA_ANALYST', 'IA_MANAGER')"/>
+        <intercept-url pattern="/riskasst/getJASONforreputationalReview.html" access="hasAnyRole('COMPLIANCE', 'ROLE_ADMIN')"/>
+
+        <!-- Risk assesment permission end.-->
+
+        <!-- Investigation permission start-->
+        <intercept-url pattern="/reactive/ReactiveWorkflow.html" access="hasAnyRole('LEGAL', 'ROLE_ADMIN')"/>
+        <intercept-url pattern="/reactive/getJASONforReactiveProjectList.html" access="hasAnyRole('LEGAL','IA_MANAGER', 'ROLE_ADMIN')"/>
+        <intercept-url pattern="/reactive/reactiveSummaryView.html" access="hasAnyRole('LEGAL', 'IA_MANAGER', 'IA_ANALYST', 'ROLE_ADMIN')"/>
+        <intercept-url pattern="/reactive/reactiveProjectList.html" access="hasAnyRole( 'ROLE_ADMIN')"/>
+        <!-- Investigation permission end-->
+
+        <!-- Due dillegence permission start -->
+        <intercept-url pattern="/riskasst/existingVendorsForReputaionalReview.html" access="hasAnyRole( 'COMPLIANCE', 'ROLE_ADMIN')"/>
+        <intercept-url pattern="/riskasst/newReputationalForm.html" access="hasAnyRole( 'COMPLIANCE','ROLE_ADMIN')"/>
+        <intercept-url pattern="/riskasst/newReputationalFormSearch.html" access="hasAnyRole( 'COMPLIANCE','ROLE_ADMIN')"/>
+        <intercept-url pattern="/riskasst/financialReview.html" access="hasAnyRole( 'COMPLIANCE','ROLE_ADMIN')"/>
+        <intercept-url pattern="/riskasst/reputationalFormProcess.html" access="hasAnyRole( 'COMPLIANCE','ROLE_ADMIN')"/>
+        <intercept-url pattern="/riskasst/newReputationalFormPrint.html" access="hasAnyRole( 'COMPLIANCE','ROLE_ADMIN')"/>
+        <intercept-url pattern="/riskasst/deleteSupportingDoc.html" access="hasAnyRole( 'LEGAL','COMPLIANCE','ROLE_ADMIN')"/>
+        <intercept-url pattern="/riskasst/supportingDocumentShow.html" access="hasAnyRole( 'LEGAL','COMPLIANCE','ROLE_ADMIN','IA_MANAGER', 'IA_ANALYST')"/>
+        <!-- Due dilligence permission end -->
+
+        <intercept-url pattern="/admin/getUserObject.html" access="hasAnyRole('LEGAL', 'EMPLOYEE','COMPLIANCE', 'ROLE_ADMIN', 'IA_ANALYST', 'IA_MANAGER')"/>
+
+        <intercept-url pattern="/admin/getTrxSearchDataList.html" access="hasAnyRole( 'LEGAL', 'COMPLIANCE','ROLE_ADMIN','IA_ANALYST','IA_MANAGER','EMPLOYEE')"/>
+        <intercept-url pattern="/admin/**" access="hasAnyRole('ROLE_ADMIN')"/>
+
+
+        <intercept-url pattern="/**" access="isAuthenticated()" />
+
+        <access-denied-handler error-page="/access-denied.html"/>
+
+
+        <form-login login-page="/login.html"
+                    default-target-url="/forward.html"
+                    authentication-failure-url="/login.html?error=1" />
+
+        <remember-me  key="e37f4b31-0c45-11dd-bd0b-0800200c9a66"/>
+        <logout logout-url="/logout.html" logout-success-url="/login.html" delete-cookies="true" invalidate-session="true" />
+
+    </http>
+
+    <authentication-manager>
+        <authentication-provider>
+            <jdbc-user-service data-source-ref="jdbcDataSource"
+                               users-by-username-query="select user_name as username, password, is_active as enabled
+              from user where user_name=?"
+                               authorities-by-username-query="select user_name as username, role as authority from user where user_name =?"
+                    />
+            <password-encoder hash="sha-256" />
+        </authentication-provider>
+    </authentication-manager>
+
+</beans:beans>

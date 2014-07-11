@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+	<title>The Kamarel - Admin Template v. 1.2</title>
+ 	<meta name="description" content="Responsive admin template builded on Twitter Bootstrap v2.3.0, with most of mobile devices support.">
+	<meta name="author" content="Tattek">
+	<meta name="copyright" content="Tattek">
+	<meta name="generator" content="Documenter v2.0 http://rxa.li/documenter">
+	<meta name="date" content="2013-06-18T00:00:00+02:00">
+	
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/js/google-code-prettify/prettify.css" rel="stylesheet">
+    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="assets/css/documenter_style.css" rel="stylesheet">
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    
+	
+	<style>
+		html, body{background-color:#EEEEEE;color:#383838;}
+		h1,h2,h3,h4,h5,h6{color:#383838;}
+		section table{background-color:#EEEEEE;}
+		::-moz-selection{background:#333636;color:#00DFFC;}
+		::selection{background:#333636;color:#00DFFC;}
+		a.brand{background-image:url();}
+		a, a:hover, a:active{color:#008C9E;}
+		hr{border-top:1px solid #D4D4D4;border-bottom:1px solid #FFFFFF;}
+		div.navbar-inner, .navbar .nav li ul{background:#343838;color:#FFFFFF;}
+		a.btn-navbar{background:#343838;color:#FFFFFF;}
+		.navbar .nav li a{color:#FFFFFF;text-shadow:1px 1px 0px #494F4F;}
+		.navbar .nav li a:hover, .navbar .nav li.active a{text-shadow:none;}
+		div.navbar-inner ul{}
+		.marketing-byline{color:#FFFFFF;}
+		.navbar .nav > li a{color:#FFFFFF;}
+		.navbar .nav > li a:hover, a.btn-navbar:hover{background:#333636;color:#00DFFC;}
+		.navbar .nav .active > a, .navbar .nav .active > a:hover, a.btn-navbar:active{background-color:#333636;color:#00DFFC;}
+		.navbar .nav li ul li a:hover{background:#333636;color:#00DFFC;}
+		.navbar .nav li ul li a:active{background:#333636;color:#00DFFC;}
+		.btn-primary {
+			  background-image: -moz-linear-gradient(top, #008C9E, #006673);
+			  background-image: -ms-linear-gradient(top, #008C9E, #006673);
+			  background-image: -webkit-gradient(linear, 0 0, 0 008C9E%, from(#343838), to(#006673));
+			  background-image: -webkit-linear-gradient(top, #008C9E, #006673);
+			  background-image: -o-linear-gradient(top, #008C9E, #006673);
+			  background-image: linear-gradient(top, #008C9E, #006673);
+			  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#008C9E', endColorstr='#006673', GradientType=0);
+			  border-color: #006673 #006673 #bfbfbf;
+			  color:#FFFFFF;
+		}
+		.btn-primary:hover,
+		.btn-primary:active,
+		.btn-primary.active,
+		.btn-primary.disabled,
+		.btn-primary[disabled] {
+		  background-color: #006673;
+		}
+		#documenter_copyright{display:block !important;visibility:visible !important;}
+	</style>
+	
+	
+	
+    </head>
+    
+<body data-spy="scroll" id="top">
+
+<!-- Documentation Navbar -->
+
+<div class="navbar navbar-fixed-top">
+	<div class="navbar-inner">
+		<div class="container"> 
+			<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a> 
+			<a class="brand" href="#">The Kamarel - Admin Template v. 1.2</a>
+			<div class="nav-collapse">
+			<ul class="nav">
+					
+			<li><a href="#features_examples" title="Features & Examples">Features & Examples</a>
+				<ul>
+					<li><a href="#features_examples_features">Features:</a>
+					<li><a href="#features_examples_page_templates">Page Templates:</a>
+				</ul>
+			</li>
+			<li><a href="#html_structure" title="HTML Structure">HTML Structure</a>
+				<ul>
+					<li><a href="#html_structure_the_top_menu">The Top Menu:</a>
+					<li><a href="#html_structure_the_sidebar">The Sidebar:</a>
+					<li><a href="#html_structure_the_main_menu">The Main Menu:</a>
+					<li><a href="#html_structure_the_content">The Content:</a>
+					<li><a href="#html_structure_content_elements">Content Elements:</a>
+				</ul>
+			</li>
+			<li><a href="#css_files_and_structure" title="CSS Files and Structure">CSS Files and Structure</a></li>
+			<li><a href="#javascript" title="JavaScript">JavaScript</a>
+				<ul>
+					<li><a href="#javascript_strongimportant_javascript_files_strong">Important Javascript files:</a>
+				</ul>
+			</li>
+			<li><a href="#sources_and_credits" title="Sources and Credits">Sources and Credits</a></li>
+			<li><a href="#changelog" title="Changelog">Changelog</a></li>
+			</ul>
+			</div>
+		</div>
+	</div>
+</div> <!-- End of Navbar -->
+
+<!-- Main Container Beginning -->			
+			
+<div class="container" id="documenter_content">
+    
+	<div id="documenter-cover">
+	<div class="masthead">
+	    <h1>The Kamarel - Admin Template v. 1.2</h1>
+	    <p>Responsive admin template builded on Twitter Bootstrap v2.3.0, with most of mobile devices support.</p>
+	    <ul class="marketing-byline">
+			<li>Created: 03/10/2011</li>
+			<li>latest Update: 08/05/2013</li>
+			<li>By: Tattek</li>
+			
+		</ul>
+	    <p class="download-info">
+			
+		</p>
+		
+	</div> <!-- masthead -->
+	
+   <div id="intro">
+    <p class="highlight hero-unit">Thank you for purchasing my theme. If you have any questions that are beyond the scope of this help file, please feel free to email via my user page contact form here. Thanks so much!</p>
+   </div> <!-- intro -->
+   
+	</div>
+      
+  <section id="features_examples">
+	<div class="page-header"><h3>Features & Examples</h3><hr class="notop"></div>
+<h4 id="features_examples_features">Features:</h4>
+<div>
+	- Responsive design, supporting most of mobile devices</div>
+<div>
+	- Font Awesome</div>
+<div>
+	- Integrated charts (using jQuery flot, sparklines and JustGage)</div>
+<div>
+	- Dynamic tables (using Tablesorter)</div>
+<div>
+	- Growl style notifications (using jGrowl)</div>
+<div>
+	- Datepicker and Colorpicker for bootstrap</div>
+<div>
+	- Calendar (using Fullcalendar)</div>
+<div>
+	- Form wizard (using formToWizard)</div>
+<div>
+	- Validated HTML5</div>
+<div>
+	- Extended accordion</div>
+<div>
+	- Sliders, Toggler</div>
+<div>
+	- WYSIWYG editor (using WYSIHTML5)</div>
+<div>
+	- Form validation (using parsley.js)</div>
+<div>
+	&nbsp;</div>
+<h4 id="features_examples_page_templates">Page Templates:</h4>
+<div>
+	1. Dashboard</div>
+<div>
+	2. Common form elements</div>
+<div>
+	3. Form validation</div>
+<div>
+	4. Form wizard</div>
+<div>
+	5. UI elements</div>
+<div>
+	6. Buttons &amp; Icons</div>
+<div>
+	7. Grid layout</div>
+<div>
+	8. Tables</div>
+<div>
+	9. Login page</div>
+<div>
+	10. Calendar</div>
+<div>
+	11. 404 page</div>
+<div>
+	12. Gallery</div>
+<div>
+	13. Widgets</div>
+<div>
+	14. Charts &amp; Graphs</div>
+<div>
+	15. Typography</div>
+<div>
+	16. Vertical Mail</div>
+<div>
+	17. Horizontal Mail</div>
+<div>
+	18. Vector Maps</div>
+<div>
+	19. Google Maps</div>
+</section>
+<section id="html_structure">
+	<div class="page-header"><h3>HTML Structure</h3><hr class="notop"></div>
+<h4 id="html_structure_the_top_menu">The Top Menu:</h4>
+<p>
+	In the top line section you can find <strong>branding</strong> and on the right side there you can find <strong>search input and some buttons </strong>which are opening a <strong>sidebar</strong>. Every input can have <strong>own notify circle</strong> with number of new notifications.&nbsp;</p>
+<pre class="prettyprint lang-html linenums">
+&lt;!-- ==================== TOP MENU ==================== --&gt;
+&lt;div class=&quot;navbar navbar-inverse navbar-fixed-top&quot;&gt;
+   &lt;div class=&quot;navbar-inner&quot;&gt;
+      &lt;div class=&quot;container-fluid&quot;&gt;
+         &lt;a class=&quot;brand&quot; href=&quot;#&quot;&gt;&lt;strong class=&quot;brandBold&quot;&gt;THE&lt;/strong&gt;KAMAREL&lt;/a&gt;
+         &lt;div class=&quot;nav pull-right&quot;&gt;
+            &lt;form class=&quot;navbar-form&quot;&gt;
+               &lt;div class=&quot;input-append&quot;&gt;
+                  &lt;input class=&quot;inp-mini inp-dark span2&quot; type=&quot;text&quot; placeholder=&quot;search...&quot;&gt;
+                  &lt;span class=&quot;add-on add-on-first add-on-mini add-on-dark&quot; id=&quot;search&quot;&gt;&lt;i class=&quot;icon-search&quot;&gt;&lt;/i&gt;&lt;/span&gt;
+                  &lt;div class=&quot;collapsibleContent&quot;&gt;
+                     &lt;a href=&quot;#tasksContent&quot;&gt;&lt;span class=&quot;add-on add-on-middle add-on-mini add-on-dark&quot; id=&quot;tasks&quot;&gt;&lt;i class=&quot;icon-tasks&quot;&gt;&lt;/i&gt;&lt;span class=&quot;notifyCircle cyan&quot;&gt;3&lt;/span&gt;&lt;/span&gt;&lt;/a&gt;
+                     ...
+                  &lt;/div&gt;
+                  &lt;a href=&quot;#collapsedSidebarContent&quot; class=&quot;collapseHolder&quot;&gt;&lt;span class=&quot;add-on add-on-mini add-on-dark&quot;&gt;&lt;i class=&quot;icon-sort-down&quot;&gt;&lt;/i&gt;&lt;/span&gt;&lt;/a&gt;
+               &lt;/div&gt;
+            &lt;/form&gt;
+         &lt;/div&gt;&lt;!--/.nav-collapse --&gt;
+      &lt;/div&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- ==================== END OF TOP MENU ==================== --&gt;</pre>
+<p>
+	Some of these buttons are collected in:&nbsp;</p>
+<pre class="prettyprint lang-html linenums">
+&lt;div class=&quot;collapsibleContent&quot;&gt;&lt;/div&gt;</pre>
+<p>
+	that is because if the window width is too small <strong>all inputs in this div will collapse</strong> in one button -&gt;</p>
+<pre class="prettyprint lang-html linenums">
+&lt;a href=&quot;#collapsedSidebarContent&quot; class=&quot;collapseHolder&quot;&gt;&lt;span class=&quot;add-on add-on-mini add-on-dark&quot;&gt;&lt;i class=&quot;icon-sort-down&quot;&gt;&lt;/i&gt;&lt;/span&gt;&lt;/a&gt;</pre>
+<h4 id="html_structure_the_sidebar">The Sidebar:</h4>
+<pre class="prettyprint lang-html linenums">
+&lt;!-- ==================== SIDEBAR ==================== --&gt;
+&lt;div class=&quot;hiddenContent&quot;&gt;
+   &lt;!-- ==================== SIDEBAR COLLAPSED ==================== --&gt;
+   &lt;div id=&quot;collapsedSidebarContent&quot;&gt;
+      &lt;div class=&quot;sidebarDivider&quot;&gt;&lt;/div&gt;
+      &lt;div class=&quot;sidebarContent&quot;&gt;
+         &lt;ul class=&quot;collapsedSidebarMenu&quot;&gt;
+            &lt;li&gt;&lt;a href=&quot;#tasksContent&quot;&gt;Tasks &lt;div class=&quot;notifyCircle cyan&quot;&gt;3&lt;/div&gt;&lt;i class=&quot;icon-chevron-sign-right&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+            ...
+         &lt;/ul&gt;
+      &lt;/div&gt;   
+   &lt;/div&gt;
+   &lt;!-- ==================== END OF SIDEBAR COLLAPSED ==================== --&gt;
+   &lt;!-- ==================== SIDEBAR TASKS ==================== --&gt;
+   &lt;div id=&quot;tasksContent&quot;&gt;
+      &lt;div class=&quot;sidebarDivider&quot;&gt;&lt;/div&gt;
+      &lt;div class=&quot;sidebarContent&quot;&gt;
+         &lt;a href=&quot;#collapsedSidebarContent&quot; class=&quot;showCollapsedSidebarMenu&quot;&gt;&lt;i class=&quot;icon-chevron-sign-left&quot;&gt;&lt;/i&gt;&lt;h1&gt; Tasks&lt;/h1&gt;&lt;/a&gt;
+         &lt;h1&gt;Tasks&lt;/h1&gt;
+         &lt;div class=&quot;sidebarInfo&quot;&gt;
+            ...
+         &lt;/div&gt;
+         &lt;ul class=&quot;tasksList&quot;&gt;
+            &lt;li class=&quot;new&quot;&gt;
+               ...  
+            &lt;/li&gt;
+         &lt;/ul&gt;
+         &lt;button class=&quot;btn btn-info&quot;&gt;View all&lt;/button&gt;
+      &lt;/div&gt;   
+   &lt;/div&gt;
+   &lt;!-- ==================== END OF SIDEBAR TASKS ==================== --&gt;
+&lt;/div&gt;
+&lt;!-- ==================== END OF SIDEBAR ==================== --&gt;</pre>
+<div>
+	The Sidebar contain a collapsed sidebar which is active if window width is below <strong>620px </strong>-&gt;</div>
+<div>
+	<pre class="prettyprint lang-html linenums">
+&lt;div id=&quot;collapsedSidebarContent&quot;&gt;&lt;/div&gt;</pre>
+</div>
+<div>
+	and normal sidebar which is active if window width is<strong> more than 620px</strong> e.g -&gt;</div>
+<div>
+	&nbsp;</div>
+<div>
+	<pre class="prettyprint lang-html linenums">
+&lt;div id=&quot;tasksContent&quot;&gt;&lt;/div&gt;</pre>
+</div>
+<hr>
+<p>
+	Normal sidebar have<strong> two headings</strong>:</p>
+<p>
+	One for collapsed sidebar -&gt;</p>
+<pre class="prettyprint lang-html linenums">
+&lt;a href=&quot;#collapsedSidebarContent&quot; class=&quot;showCollapsedSidebarMenu&quot;&gt;&lt;i class=&quot;icon-chevron-sign-left&quot;&gt;&lt;/i&gt;&lt;h1&gt; Tasks&lt;/h1&gt;&lt;/a&gt;</pre>
+<p>
+	and one for normal sidebar -&gt;</p>
+<pre class="prettyprint lang-html linenums">
+&lt;h1&gt; Tasks&lt;/h1&gt;</pre>
+<p>
+	All other elemets are <strong>same for both</strong> of sidebars.</p>
+<h4 id="html_structure_the_main_menu">The Main Menu:</h4>
+<pre class="prettyprint lang-html linenums">
+&lt;!-- ==================== MAIN MENU ==================== --&gt;
+   &lt;div class=&quot;mainmenu&quot;&gt;
+      &lt;div class=&quot;container-fluid&quot;&gt;
+         &lt;ul class=&quot;nav&quot;&gt;
+            &lt;li class=&quot;collapseMenu&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;i class=&quot;icon-double-angle-left&quot;&gt;&lt;/i&gt;hide menu&lt;i class=&quot;icon-double-angle-right deCollapse&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+            &lt;li class=&quot;divider-vertical firstDivider&quot;&gt;&lt;/li&gt;
+            &lt;li class=&quot;left-side active&quot; id=&quot;dashboard&quot;&gt;&lt;a href=&quot;index.html&quot;&gt;&lt;i class=&quot;icon-dashboard&quot;&gt;&lt;/i&gt; DASHBOARD&lt;/a&gt;&lt;/li&gt;
+            &lt;li class=&quot;divider-vertical&quot;&gt;&lt;/li&gt;
+            ...
+         &lt;/ul&gt;
+      &lt;/div&gt;
+   &lt;/div&gt;
+&lt;!-- ==================== END OF MAIN MENU ==================== --&gt;</pre>
+<p>
+	The main menu will collapse at <strong>1170px width and at 620px width</strong>, you can change this in <strong>thekamarel-responsive.css</strong> file (line 13 and line 349)</p>
+<h4 id="html_structure_the_content">The Content:</h4>
+<p>
+	Content of page start in this div -&gt;</p>
+<pre class="prettyprint lang-html linenums">
+&lt;div class=&quot;content&quot;&gt;&lt;/div&gt;</pre>
+<p>
+	First thing in the content is <strong>title line </strong>-&gt;</p>
+<pre class="prettyprint lang-html linenums">
+!-- ==================== TITLE LINE FOR HEADLINE ==================== --&gt;
+&lt;div class=&quot;titleLine&quot;&gt;
+   &lt;div class=&quot;container-fluid&quot;&gt;
+   &lt;div class=&quot;titleIcon&quot;&gt;&lt;i class=&quot;icon-dashboard&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+      &lt;ul class=&quot;titleLineHeading&quot;&gt;
+         &lt;li class=&quot;heading&quot;&gt;&lt;h1&gt;Dashboard&lt;/h1&gt;&lt;/li&gt;
+         &lt;li class=&quot;subheading&quot;&gt;the place for everything&lt;/li&gt;
+      &lt;/ul&gt;
+      &lt;ul class=&quot;titleLineCharts pull-right&quot;&gt;
+         &lt;li&gt;
+            &lt;span class=&quot;usersBar&quot;&gt;100,235,549,222,639,335,800&lt;/span&gt;
+            &lt;h2 class=&quot;cyanText&quot;&gt;1254&lt;span class=&quot;greyText&quot;&gt;users&lt;/span&gt;&lt;/h2&gt;
+         &lt;/li&gt;
+         ...
+      &lt;/ul&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+!-- ==================== END OF TITLE LINE ==================== --&gt;</pre>
+<p>
+	We can find there an <strong>Icon</strong> which is positioned on the background with absolute position - &gt;</p>
+<pre class="prettyprint lang-html linenums">
+&lt;div class=&quot;titleIcon&quot;&gt;&lt;i class=&quot;icon-dashboard&quot;&gt;&lt;/i&gt;&lt;/div&gt;</pre>
+<p>
+	heading and subheading</p>
+<pre class="prettyprint lang-html linenums">
+&lt;li class=&quot;heading&quot;&gt;&lt;h1&gt;Dashboard&lt;/h1&gt;&lt;/li&gt;
+&lt;li class=&quot;subheading&quot;&gt;the place for everything&lt;/li&gt;</pre>
+<p>
+	and some charts</p>
+<pre class="prettyprint lang-html linenums">
+&lt;li&gt;
+   &lt;span class=&quot;usersBar&quot;&gt;100,235,549,222,639,335,800&lt;/span&gt;
+   &lt;h2 class=&quot;cyanText&quot;&gt;1254&lt;span class=&quot;greyText&quot;&gt;users&lt;/span&gt;&lt;/h2&gt;
+&lt;/li&gt;</pre>
+<hr>
+<p>
+	After title line there are <strong>breadcrumbs</strong> -&gt;</p>
+<pre class="prettyprint lang-html linenums">
+&lt;!-- ==================== BREADCRUMBS / DATETIME ==================== --&gt;
+&lt;ul class=&quot;breadcrumb&quot;&gt;
+   &lt;li&gt;&lt;i class=&quot;icon-home&quot;&gt;&lt;/i&gt;&lt;a href=&quot;index.html&quot;&gt; Home&lt;/a&gt; &lt;span class=&quot;divider&quot;&gt;&lt;i class=&quot;icon-angle-right&quot;&gt;&lt;/i&gt;&lt;/span&gt;&lt;/li&gt;
+   &lt;li class=&quot;active&quot;&gt;Dashboard&lt;/li&gt;
+   &lt;li class=&quot;moveDown pull-right&quot;&gt;
+      &lt;span class=&quot;time&quot;&gt;&lt;/span&gt;
+      &lt;span class=&quot;date&quot;&gt;&lt;/span&gt;
+   &lt;/li&gt;    
+&lt;/ul&gt;
+&lt;!-- ==================== END OF BREADCRUMBS / DATETIME ==================== --&gt;</pre>
+<h4 id="html_structure_content_elements">Content Elements:</h4>
+<p>
+	<strong>Master Actions:</strong></p>
+<p>
+	Master actions are some kind of useful buttons -&gt;</p>
+<pre class="prettyprint lang-html linenums">
+&lt;!-- ==================== MASTER ACTIONS LIST ==================== --&gt;
+&lt;ul class=&quot;masterActions&quot;&gt;
+   &lt;li class=&quot;active&quot;&gt;
+      &lt;i class=&quot;icon-envelope-alt redText&quot;&gt;&lt;/i&gt;
+      &lt;h1 class=&quot;redText&quot;&gt;Check &amp; send&lt;/h1&gt;
+      &lt;p&gt;new messages&lt;/p&gt;
+      &lt;div class=&quot;notifyCircle red&quot;&gt;12&lt;/div&gt;
+   &lt;/li&gt;
+   ...
+&lt;/ul&gt;
+&lt;!-- ==================== END OF MASTER ACTIONS LIST ==================== -&gt;</pre>
+<hr>
+<p>
+	<strong>Tab Container:</strong></p>
+<pre class="prettyprint lang-html linenums">
+&lt;div class=&quot;span12 tabContainer&quot;&gt;
+   &lt;!-- ==================== TAB NAVIGATION ==================== --&gt;
+   &lt;ul class=&quot;nav nav-tabs&quot;&gt;
+      &lt;li class=&quot;active&quot;&gt;
+         &lt;a href=&quot;#systemStats&quot;&gt;System stats&lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#serverStats&quot;&gt;Server stats&lt;/a&gt;&lt;/li&gt;
+      &lt;li class=&quot;controlButton pull-right&quot;&gt;&lt;i class=&quot;icon-remove removeElement&quot;&gt;&lt;/i&gt;&lt;/li&gt;
+      &lt;li class=&quot;controlButton pull-right&quot;&gt;&lt;i class=&quot;icon-caret-down minimizeElement&quot;&gt;&lt;/i&gt;&lt;/li&gt;
+   &lt;/ul&gt;
+   &lt;!-- ==================== END OF TAB NAVIGATIION ==================== --&gt;
+   &lt;div class=&quot;container-fluid&quot;&gt;
+      &lt;!-- ==================== FIRST TAB CONTENT ==================== --&gt;
+      &lt;ul class=&quot;chartContainers tabContent&quot; id=&quot;systemStats&quot;&gt;
+         &lt;li&gt;
+            ...
+         &lt;/li&gt;
+      &lt;/ul&gt;
+      &lt;!-- ==================== END OF FIRST TAB CONTENT ==================== --&gt;
+      &lt;!-- ==================== SECOND TAB CONTENT ==================== --&gt;
+      &lt;ul class=&quot;gaugeContainers tabContent&quot; id=&quot;serverStats&quot;&gt;
+         &lt;li id=&quot;g1&quot;&gt;&lt;/li&gt;
+         ...
+      &lt;/ul&gt;
+      &lt;!-- ==================== END OF SECOND TAB CONTENT ==================== --&gt;
+   &lt;/div&gt;
+&lt;/div&gt;</pre>
+<p>
+	This is the <strong>tab navigation</strong> -&gt;</p>
+<pre class="prettyprint lang-html linenums">
+   &lt;!-- ==================== TAB NAVIGATION ==================== --&gt;
+   &lt;ul class=&quot;nav nav-tabs&quot;&gt;
+      &lt;li class=&quot;active&quot;&gt;
+         &lt;a href=&quot;#systemStats&quot;&gt;System stats&lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#serverStats&quot;&gt;Server stats&lt;/a&gt;&lt;/li&gt;
+      &lt;li class=&quot;controlButton pull-right&quot;&gt;&lt;i class=&quot;icon-remove removeElement&quot;&gt;&lt;/i&gt;&lt;/li&gt;
+      &lt;li class=&quot;controlButton pull-right&quot;&gt;&lt;i class=&quot;icon-caret-down minimizeElement&quot;&gt;&lt;/i&gt;&lt;/li&gt;
+   &lt;/ul&gt;
+   &lt;!-- ==================== END OF TAB NAVIGATIION ==================== --&gt;</pre>
+<p>
+	On the right side you can find control buttons for <strong>close</strong> or <strong>minimize</strong> tab container.</p>
+<p>
+	Content of tabs is inside this div -&gt;</p>
+<pre class="prettyprint lang-html linenums">
+&lt;div class=&quot;container-fluid&quot;&gt;&lt;/div&gt;</pre>
+<hr>
+<p>
+	<strong>Floating Boxes:</strong></p>
+<p>
+	Content is mostly placed in boxes - &gt;</p>
+<pre class="prettyprint lang-html linenums">
+&lt;div class=&quot;span6&quot;&gt;
+   &lt;!-- ==================== SPAN6 HEADLINE ==================== --&gt;
+   &lt;div class=&quot;containerHeadline&quot;&gt;
+      &lt;i class=&quot;icon-th&quot;&gt;&lt;/i&gt;&lt;h2&gt;Span6&lt;/h2&gt;
+      &lt;div class=&quot;controlButton pull-right&quot;&gt;&lt;i class=&quot;icon-remove removeElement&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+      &lt;div class=&quot;controlButton pull-right&quot;&gt;&lt;i class=&quot;icon-caret-down minimizeElement&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+   &lt;/div&gt;
+   &lt;!-- ==================== END OF SPAN6 HEADLINE ==================== --&gt;
+   &lt;!-- ==================== SPAN6 FLOATING BOX ==================== --&gt;
+   &lt;div class=&quot;floatingBox&quot;&gt;
+      &lt;div class=&quot;container-fluid&quot;&gt;
+         &lt;p&gt;
+            ...
+         &lt;/p&gt;    
+      &lt;/div&gt;
+   &lt;/div&gt;
+   &lt;!-- ==================== END OF SPAN6 FLOATING BOX ==================== --&gt; 
+&lt;/div&gt;</pre>
+<p>
+	These floating boxes have two sections, first for <strong>headline</strong> -&gt;</p>
+<pre class="prettyprint lang-html linenums">
+&lt;!-- ==================== SPAN6 HEADLINE ==================== --&gt;
+   &lt;div class=&quot;containerHeadline&quot;&gt;
+      &lt;i class=&quot;icon-th&quot;&gt;&lt;/i&gt;&lt;h2&gt;Span6&lt;/h2&gt;
+      &lt;div class=&quot;controlButton pull-right&quot;&gt;&lt;i class=&quot;icon-remove removeElement&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+      &lt;div class=&quot;controlButton pull-right&quot;&gt;&lt;i class=&quot;icon-caret-down minimizeElement&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+   &lt;/div&gt;
+   &lt;!-- ==================== END OF SPAN6 HEADLINE ==================== --&gt;</pre>
+<p>
+	In this section you can find<strong> icon, heading and elements for closing and minimizing</strong> floating box, second section hold the <strong>content of the box</strong> -&gt;</p>
+<pre class="prettyprint lang-html linenums">
+&lt;!-- ==================== SPAN6 FLOATING BOX ==================== --&gt;
+   &lt;div class=&quot;floatingBox&quot;&gt;
+      &lt;div class=&quot;container-fluid&quot;&gt;
+         &lt;p&gt;
+            ...
+         &lt;/p&gt;    
+      &lt;/div&gt;
+   &lt;/div&gt;
+   &lt;!-- ==================== END OF SPAN6 FLOATING BOX ==================== --&gt; </pre>
+<hr>
+<p>
+	<strong>Floating Box with Tabs:</strong></p>
+<pre class="prettyprint lang-html linenums">
+&lt;!-- ==================== ACTIVITIES CONTAINER ==================== --&gt;
+&lt;div class=&quot;span6&quot;&gt;
+    &lt;!-- ==================== ACTIVITIES HEADLINE ==================== --&gt;
+    &lt;div class=&quot;containerHeadline&quot;&gt;
+        &lt;i class=&quot;icon-reorder&quot;&gt;&lt;/i&gt;&lt;h2&gt;Box with Tabs&lt;/h2&gt;
+        &lt;div class=&quot;controlButton pull-right&quot;&gt;&lt;i class=&quot;icon-remove removeElement&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+        &lt;div class=&quot;controlButton pull-right&quot;&gt;&lt;i class=&quot;icon-caret-down minimizeElement&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!-- ==================== END OF ACTIVITIES HEADLINE ==================== --&gt;
+    &lt;!-- ==================== ACTIVITIES FLOATING BOX ==================== --&gt;
+    &lt;div class=&quot;floatingBox&quot;&gt;
+        &lt;div class=&quot;container-fluid&quot;&gt;
+            &lt;!-- ==================== ACTIVITIES MENU ==================== --&gt;
+            &lt;div class=&quot;floatingBoxMenu&quot;&gt;
+                &lt;ul&gt;
+                    &lt;li class=&quot;active&quot;&gt;&lt;a href=&quot;#allActivities&quot;&gt;All activities&lt;/a&gt;&lt;/li&gt;
+                    ...
+                &lt;/ul&gt;
+            &lt;/div&gt;
+            &lt;!-- ==================== END OF ACTIVITIES MENU ==================== --&gt;
+            &lt;!-- ==================== ALL ACTIVITIES CONTENT ==================== --&gt;
+            &lt;ul class=&quot;floatingBoxContainers&quot; id=&quot;allActivities&quot;&gt;
+                &lt;li&gt;
+                    &lt;div class=&quot;circleAvatar&quot;&gt;&lt;img src=&quot;img/homer-avatar.jpg&quot; alt=&quot;&quot;&gt;&lt;/div&gt;
+                    &lt;p class=&quot;headLine&quot;&gt;
+                        &lt;span class=&quot;author&quot;&gt;John Doe&lt;/span&gt;
+                        &lt;i class=&quot;icon-circle&quot;&gt;&lt;/i&gt;
+                        &lt;span&gt;posted a &lt;span class=&quot;cyanText&quot;&gt;comment&lt;/span&gt;&lt;/span&gt;
+                        &lt;i class=&quot;icon-circle&quot;&gt;&lt;/i&gt;
+                        &lt;span&gt;2 hours ago&lt;/span&gt;
+                        &lt;i class=&quot;icon-play-circle moreOptions pull-right&quot;&gt;&lt;/i&gt;
+                    &lt;/p&gt;
+                    &lt;p&gt;&quot;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco...&quot;&lt;/p&gt;
+                &lt;/li&gt;
+                ...
+            &lt;/ul&gt;
+            &lt;!-- ==================== END OF ALL ACTIVITIES CONTENT ==================== --&gt;
+            &lt;ul&gt;
+            ...    
+            &lt;/ul&gt;
+            ...
+            &lt;!-- ==================== END OF RECENT TASKS CONTENT ==================== --&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!-- ==================== END OF ACTIVITIES FLOATING BOX ==================== --&gt;
+&lt;/div&gt;
+&lt;!-- ==================== END OF ACTIVITIES CONTAINER ==================== --&gt;</pre>
+<p>
+	This one is classic floating box as previous but with one more thing to do, there is <strong>navigation menu</strong> -&gt;</p>
+<pre class="prettyprint lang-html linenums">
+&lt;!-- ==================== ACTIVITIES MENU ==================== --&gt;
+&lt;div class=&quot;floatingBoxMenu&quot;&gt;
+   &lt;ul&gt;
+      &lt;li class=&quot;active&quot;&gt;&lt;a href=&quot;#allActivities&quot;&gt;All activities&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;...&lt;/li&gt;
+      ...
+   &lt;/ul&gt;
+&lt;/div&gt;
+&lt;!-- ==================== END OF ACTIVITIES MENU ==================== --&gt;</pre>
+<hr>
+<p>
+	<strong>Dynamic Table:</strong></p>
+<pre class="prettyprint lang-html linenums">
+&lt;div class=&quot;span12&quot;&gt;
+    &lt;!-- ==================== TABLE HEADLINE ==================== --&gt;
+    &lt;div class=&quot;containerHeadline tableHeadline&quot;&gt;
+        &lt;i class=&quot;icon-group&quot;&gt;&lt;/i&gt;&lt;h2&gt;Members&lt;/h2&gt;
+        &lt;!-- ==================== TABLE CONTROLS ==================== --&gt;
+        &lt;form&gt;
+            &lt;div class=&quot;input-append&quot;&gt;
+                &lt;input class=&quot;inp-mini span8&quot; type=&quot;text&quot; placeholder=&quot;search in members...&quot; id=&quot;memberSearch&quot;&gt;
+                &lt;span class=&quot;add-on add-on-first add-on-mini&quot;&gt;&lt;i class=&quot;icon-search&quot;&gt;&lt;/i&gt;&lt;/span&gt;
+                &lt;span class=&quot;add-on add-on-middle add-on-mini tableSettings&quot;&gt;&lt;i class=&quot;icon-cog&quot;&gt;&lt;/i&gt;&lt;/span&gt;
+                &lt;span class=&quot;add-on add-on-middle add-on-mini minimizeTable&quot;&gt;&lt;i class=&quot;icon-caret-down&quot;&gt;&lt;/i&gt;&lt;/span&gt;
+                &lt;span class=&quot;add-on add-on-last add-on-mini removeTable&quot;&gt;&lt;i class=&quot;icon-remove&quot;&gt;&lt;/i&gt;&lt;/span&gt;
+            &lt;/div&gt;
+        &lt;/form&gt;
+        &lt;!-- ==================== END OF TABLE CONTROLS ==================== --&gt;
+    &lt;/div&gt;
+    &lt;!-- ==================== END OF TABLE HEADLINE ==================== --&gt;
+    &lt;!-- ==================== TABLE FLOATING BOX ==================== --&gt;
+    &lt;div class=&quot;floatingBox table&quot;&gt;
+        &lt;div class=&quot;container-fluid&quot;&gt;
+            &lt;!-- ==================== TABLESORTER TABLE ==================== --&gt;
+            &lt;table class=&quot;tablesorter centerFirstLast&quot; id=&quot;membersTable&quot;&gt;
+                ...
+            &lt;/table&gt;
+            &lt;!-- ==================== END OF TABLESORTER TABLE ==================== --&gt;
+            &lt;!-- ==================== TABLE PAGER ==================== --&gt;
+            &lt;div id=&quot;pager&quot; class=&quot;pager&quot;&gt;
+                &lt;form&gt;
+                    &lt;span class=&quot;label white first&quot;&gt;&lt;i class=&quot;icon-double-angle-left&quot;&gt;&lt;/i&gt; first&lt;/span&gt;
+                    &lt;span class=&quot;label white prev&quot;&gt;&lt;i class=&quot;icon-angle-left&quot;&gt;&lt;/i&gt; prev&lt;/span&gt;
+                    &lt;span id=&quot;pageNumContainers&quot;&gt;&lt;/span&gt;
+                    &lt;span class=&quot;pagedisplay&quot;&gt;&lt;/span&gt;&lt;!-- this can be any element, including an input --&gt;
+                    &lt;span class=&quot;label white next&quot;&gt;next &lt;i class=&quot;icon-angle-right&quot;&gt;&lt;/i&gt;&lt;/span&gt;
+                    &lt;span class=&quot;label white last&quot;&gt;last &lt;i class=&quot;icon-double-angle-right&quot;&gt;&lt;/i&gt;&lt;/span&gt;
+                    &lt;div class=&quot;perPageSelect&quot;&gt;
+                        &lt;select class=&quot;pagesize inp-mini&quot;&gt;
+                            &lt;option selected=&quot;selected&quot; value=&quot;10&quot;&gt;10&lt;/option&gt;
+                            &lt;option value=&quot;20&quot;&gt;20&lt;/option&gt;
+                            &lt;option value=&quot;30&quot;&gt;30&lt;/option&gt;
+                            &lt;option value=&quot;50&quot;&gt;50&lt;/option&gt;
+                        &lt;/select&gt; records per page
+                    &lt;/div&gt;
+                &lt;/form&gt;
+            &lt;/div&gt;
+            &lt;!-- ==================== END TABLE PAGER ==================== --&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!-- ==================== END OF TABLE FLOATING BOX ==================== --&gt;
+&lt;/div&gt;</pre>
+<p>
+	This floating box have a special headline with <strong>own control panel</strong>, where you can find <strong>searching, settings, &nbsp;minimize and close</strong> floating box -&gt;</p>
+<pre class="prettyprint lang-html linenums">
+&lt;!-- ==================== TABLE HEADLINE ==================== --&gt;
+    &lt;div class=&quot;containerHeadline tableHeadline&quot;&gt;
+        &lt;i class=&quot;icon-group&quot;&gt;&lt;/i&gt;&lt;h2&gt;Members&lt;/h2&gt;
+        &lt;!-- ==================== TABLE CONTROLS ==================== --&gt;
+        &lt;form&gt;
+            &lt;div class=&quot;input-append&quot;&gt;
+                &lt;input class=&quot;inp-mini span8&quot; type=&quot;text&quot; placeholder=&quot;search in members...&quot; id=&quot;memberSearch&quot;&gt;
+                &lt;span class=&quot;add-on add-on-first add-on-mini&quot;&gt;&lt;i class=&quot;icon-search&quot;&gt;&lt;/i&gt;&lt;/span&gt;
+                &lt;span class=&quot;add-on add-on-middle add-on-mini tableSettings&quot;&gt;&lt;i class=&quot;icon-cog&quot;&gt;&lt;/i&gt;&lt;/span&gt;
+                &lt;span class=&quot;add-on add-on-middle add-on-mini minimizeTable&quot;&gt;&lt;i class=&quot;icon-caret-down&quot;&gt;&lt;/i&gt;&lt;/span&gt;
+                &lt;span class=&quot;add-on add-on-last add-on-mini removeTable&quot;&gt;&lt;i class=&quot;icon-remove&quot;&gt;&lt;/i&gt;&lt;/span&gt;
+            &lt;/div&gt;
+        &lt;/form&gt;
+        &lt;!-- ==================== END OF TABLE CONTROLS ==================== --&gt;
+    &lt;/div&gt;
+    &lt;!-- ==================== END OF TABLE HEADLINE ==================== --&gt;</pre>
+<hr>
+<p>
+	<strong>Accordion &amp; Multiaccordion:</strong></p>
+<pre class="prettyprint lang-html linenums">
+&lt;!-- ==================== ACCORDION CONTAINER ==================== --&gt;
+&lt;div class=&quot;span6&quot;&gt;
+    &lt;!-- ==================== ACCORDION HEADLINE ==================== --&gt;
+    &lt;div class=&quot;containerHeadline&quot;&gt;
+        &lt;i class=&quot;icon-folder-open&quot;&gt;&lt;/i&gt;&lt;h2&gt;Accordion&lt;/h2&gt;
+        &lt;div class=&quot;controlButton pull-right&quot;&gt;&lt;i class=&quot;icon-remove removeElement&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+        &lt;div class=&quot;controlButton pull-right&quot;&gt;&lt;i class=&quot;icon-caret-down minimizeElement&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!-- ==================== END OF ACCORDION HEADLINE ==================== --&gt;
+    &lt;!-- ==================== ACCORDION FLOATING BOX ==================== --&gt;
+    &lt;div class=&quot;floatingBox&quot;&gt;
+        &lt;div class=&quot;container-fluid&quot;&gt;
+            &lt;div class=&quot;accordion&quot; id=&quot;accordion&quot;&gt;
+                &lt;div class=&quot;accordion-group&quot;&gt;
+                    &lt;div class=&quot;accordion-heading&quot;&gt;
+                        &lt;div class=&quot;collapseIconContainer&quot;&gt;
+                            &lt;i class=&quot;icon-plus&quot;&gt;&lt;/i&gt;
+                        &lt;/div&gt;
+                        &lt;a class=&quot;accordion-toggle&quot; data-toggle=&quot;collapse&quot; data-parent=&quot;#accordion&quot; href=&quot;#collapseOne&quot;&gt;
+                            Collapsible Group Item #1
+                        &lt;/a&gt;
+                    &lt;/div&gt;
+                    &lt;div id=&quot;collapseOne&quot; class=&quot;accordion-body collapse&quot;&gt;
+                        &lt;div class=&quot;accordion-inner&quot;&gt;
+                            ...
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;accordion-group&quot;&gt;
+                    ...
+                &lt;/div&gt;
+                &lt;div class=&quot;accordion-group&quot;&gt;
+                    ...
+                &lt;/div&gt;
+            &lt;/div&gt;    
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!-- ==================== END OF ACCORDION FLOATING BOX ==================== --&gt;
+&lt;/div&gt;
+&lt;!-- ==================== END OF ACCORDION CONTAINER ==================== --&gt;</pre>
+<p>
+	This is the simple <strong>accordion</strong>, but if you need to open<strong> more than one</strong> container you can change this -&gt;</p>
+<pre class="prettyprint lang-html linenums">
+&lt;div class=&quot;accordion&quot; id=&quot;accordion&quot;&gt;...&lt;/div&gt;</pre>
+<p>
+	to this -&gt;</p>
+<pre class="prettyprint lang-html linenums">
+&lt;div class=&quot;accordion multi&quot; id=&quot;multiAccordion&quot;&gt;...&lt;/div&gt;</pre>
+</section>
+<section id="css_files_and_structure">
+	<div class="page-header"><h3>CSS Files and Structure</h3><hr class="notop"></div>
+<p>
+	I&#39;m using few CSS files in this theme, all of them are imported from file <strong>styles.css</strong>. Here they are -&gt;</p>
+<pre class="prettyprint lang-css linenums">
+@import url(&#39;bootstrap.min.css&#39;);                   /* bootstrap css */
+@import url(&#39;font-awesome.min.css&#39;);                /* font awesome css */
+@import url(&#39;slider.css&#39;);                          /* bootstrap slider css */
+@import url(&#39;toggle-switch.css&#39;);                   /* toggler switch css */
+@import url(&#39;bootstrap-wysihtml5-0.0.2.css&#39;);       /* bootstrap wysiwyg css */
+@import url(&#39;theme.default.css&#39;);                   /* tablesorter css */
+@import url(&#39;bootstrap-editable.css&#39;);              /* bootstrap editable fields css */
+@import url(&#39;jquery.selectBoxIt.css&#39;);              /* selectBoxIt plugin css */
+@import url(&#39;colorpicker.css&#39;);                     /* colorpicker plugin css */
+@import url(&#39;datepicker.css&#39;);                      /* datepicker plugin css */
+@import url(&#39;jquery.jgrowl.min.css&#39;);               /* jgrowl plugin css */
+@import url(&#39;bootstrap-tags.css&#39;);             	    /* bootstrap tags css */
+@import url(&#39;colorbox.css&#39;);              	    /* colorbox css */
+@import url(&#39;thekamarel.css&#39;);                      /* main project css */
+@import url(&#39;thekamarel-responsive.css&#39;);           /* main responsive project css */ </pre>
+<p>
+	The <strong>thekamarel.css</strong> file contains all of the specific stylings for the page. The file is separated into sections using:</p>
+<pre class="prettyprint lang-css linenums">
+/*=====================HTML, BODY SETTINGS ===========================*/
+
+some css
+
+/*=====================TOPMENU SETTINGS ===========================*/
+
+some css
+
+/*=====================SIDEBAR SETTINGS ===========================*/
+
+some css
+
+/*=====================COLLAPSED SIDEBAR SETTINGS===========================*/
+
+some css</pre>
+<p>
+	The <strong>thekamarel-responsive.css</strong> file contains all of the specific stylings for responsive layout.</p>
+</section>
+<section id="javascript">
+	<div class="page-header"><h3>JavaScript</h3><hr class="notop"></div>
+<h4 id="javascript_strongimportant_javascript_files_strong"><strong>Important Javascript files:</strong></h4>
+<ol>
+	<li>
+		jQuery</li>
+	<li>
+		Thekamarel custom scripts</li>
+	<li>
+		Some plugins</li>
+</ol>
+<ol>
+	<li>
+		jQuery is a Javascript library that greatly reduces the amount of code that you must write.</li>
+	<li>
+		We have a <strong>thekamarel.js </strong>file where is all important scripts for example pages in theme. Every script have <strong>heading</strong> such as -&gt;&nbsp;
+		<pre class="prettyprint lang-js linenums">
+/*============== <span style="font-family: Arial, Verdana, sans-serif;">CHOOSE SIDE WHERE SUBMENU OPEN ==============</span><span style="font-family: Arial, Verdana, sans-serif;">*/</span>
+    .click(function(evt) {
+        var isRight = evt.pageX &gt; (evt.view.outerWidth / 1.2);
+        if (isRight === true) {
+            $(&#39;.dropdown-submenu&#39;).addClass(&#39;submenu-left&#39;)
+        }
+        else {
+            $(&#39;.dropdown-submenu&#39;).removeClass(&#39;submenu-left&#39;)
+        }
+    });</pre>
+	</li>
+	<li>
+		There are few plugins which are doing more complex work and the list of them with links to documentation you can find in last chapter of documentation &quot;<strong>Sources and Credits</strong>&quot;.</li>
+</ol>
+<p>
+	&nbsp;</p>
+</section>
+<section id="sources_and_credits">
+	<div class="page-header"><h3>Sources and Credits</h3><hr class="notop"></div>
+<p>
+	I&#39;ve used the following images:</p>
+<pre class="prettyprint lang-plain linenums">
+homer-avatar.jpg - <a href="http://morguefile.com/archive/display/210336">http://morguefile.com/archive/display/210336</a>
+
+morgueFile free photo
+
+You are allowed to copy, distribute, transmit the work and to adapt the work. Attribution is not required. You are prohibited from using this work in a stand alone manner.</pre>
+<pre class="prettyprint lang-plain linenums">
+ici.jpg - <a href="http://www.publicdomainpictures.net/view-image.php?image=7440&amp;picture=old-man">http://www.publicdomainpictures.net/view-image.php?image=7440&amp;picture=old-man</a>
+
+Pokud chcete použ&iacute;t obr&aacute;zek kter&yacute; zde najdete pro komerčn&iacute; použit&iacute;, pros&iacute;m, uvědomte si, že ž&aacute;dn&yacute; model release nebyl z&iacute;sk&aacute;n a obr&aacute;zky s v&yacute;robky nebo nemovitostmi by měly b&yacute;t použ&iacute;v&aacute;ny s opatrnost&iacute;.</pre>
+<pre class="prettyprint lang-plain linenums">
+peter-avatar.jpg - <a href="http://commons.wikimedia.org/wiki/File:Master_of_Fl%C3%A9malle_-_Portrait_of_a_Fat_Man_-_Google_Art_Project.jpg">http://commons.wikimedia.org/wiki/File:Master_of_Fl%C3%A9malle_-_Portrait_of_a_Fat_Man_-_Google_Art_Project.jpg</a>
+
+From Wikimedia Commons, the free media repository</pre>
+<pre class="prettyprint lang-plain linenums">
+rimmer-avatar.jpg - <a href="http://commons.wikimedia.org/wiki/File:Andromeda_galaxy_2.jpg">http://commons.wikimedia.org/wiki/File:Andromeda_galaxy_2.jpg</a>
+
+From Wikimedia Commons, the free media repository</pre>
+<pre class="prettyprint lang-plain linenums">
+zoidberg-avatar.jpg - <a href="http://commons.wikimedia.org/wiki/File:Coconut_crab.jpg">http://commons.wikimedia.org/wiki/File:Coconut_crab.jpg</a>
+
+From Wikimedia Commons, the free media repository</pre>
+<div>
+	Assets:</div>
+<div>
+	&nbsp;</div>
+<div>
+	<pre class="prettyprint lang-plain linenums">
+ICON FONT - <a href="http://fortawesome.github.io/Font-Awesome/license/">http://fortawesome.github.io/Font-Awesome/license/</a>
+
+Font Awesome is fully open source and is GPL compatible. You can use it for commerical projects, open source projects, or really just about whatever you want.</pre>
+	<pre class="prettyprint lang-plain linenums">
+BOOTSTRAP COLORPICKER - <a href="http://www.eyecon.ro/bootstrap-colorpicker/">http://www.eyecon.ro/bootstrap-colorpicker/</a></pre>
+	<pre class="prettyprint lang-plain linenums">
+BOOTSTRAP DATEPICKER - <a href="http://www.eyecon.ro/bootstrap-datepicker/">http://www.eyecon.ro/bootstrap-datepicker/</a></pre>
+	<pre class="prettyprint lang-plain linenums">
+X-EDITABLE - <a href="http://vitalets.github.io/x-editable/">http://vitalets.github.io/x-editable/</a>
+
+X-editable &copy; Vitaliy Potapov 2012. Released under the MIT license.</pre>
+	<pre class="prettyprint lang-plain linenums">
+BOOTSTRAP MULTISELECT - <a href="https://github.com/davidstutz/bootstrap-multiselect">https://github.com/davidstutz/bootstrap-multiselect</a>
+
+Copyright 2012, 2013 David Stutz
+
+Licensed under the Apache License, Version 2.0</pre>
+	<pre class="prettyprint lang-plain linenums">
+BOOTSTRAP SLIDER - <a href="http://www.eyecon.ro/bootstrap-slider/">http://www.eyecon.ro/bootstrap-slider/</a></pre>
+	<pre class="prettyprint lang-plain linenums">
+BOOTSTRAP WYSIHTML5 - <a href="https://github.com/jhollingworth/bootstrap-wysihtml5/">https://github.com/jhollingworth/bootstrap-wysihtml5/</a></pre>
+	<pre class="prettyprint lang-plain linenums">
+FORMTOWIZARD - <a href="http://www.jankoatwarpspeed.com/turn-any-webform-into-a-powerful-wizard-with-jquery-formtowizard-plugin/">http://www.jankoatwarpspeed.com/turn-any-webform-into-a-powerful-wizard-with-jquery-formtowizard-plugin/</a>
+
+This work is published under Creative Commons Attribution 3.0 Unported License.</pre>
+	<pre class="prettyprint lang-plain linenums">
+FULLCALENDAR - <a href="http://arshaw.com/fullcalendar/">http://arshaw.com/fullcalendar/</a>
+
+It is open source licensed under an MIT license.</pre>
+
+	<pre class="prettyprint lang-plain linenums">
+COLORBOX - <a href="http://www.jacklmoore.com/colorbox/">http://www.jacklmoore.com/colorbox/</a>
+
+Released under the MIT License.</pre>
+	<pre class="prettyprint lang-plain linenums">
+JQUERY FLOT - <a href="http://www.flotcharts.org/">http://www.flotcharts.org/</a></pre>
+	<pre class="prettyprint lang-plain linenums">
+JGROWL - <a href="http://plugins.jquery.com/jgrowl/">http://plugins.jquery.com/jgrowl/</a></pre>
+	<pre class="prettyprint lang-plain linenums">
+BOOTSTRAP TAGS - <a href="http://maxwells.github.io/bootstrap-tags.html">http://maxwells.github.io/bootstrap-tags.html</a></pre>
+	<pre class="prettyprint lang-plain linenums">
+SELECTBOXIT - <a href="http://gregfranko.com/jquery.selectBoxIt.js/">http://gregfranko.com/jquery.selectBoxIt.js/</a>
+
+SelectBoxIt is available for use under the MIT software license.</pre>
+	<pre class="prettyprint lang-plain linenums">
+SPARKLINE - <a href="http://omnipotent.net/jquery.sparkline/#s-about">http://omnipotent.net/jquery.sparkline/#s-about</a>
+
+The plugin was written by Gareth Watts for Splunk Inc and released under the New BSD License.</pre>
+	<pre class="prettyprint lang-plain linenums">
+TABLESORTER - <a href="http://tablesorter.com/docs/">http://tablesorter.com/docs/</a>
+
+Licence: Dual licensed (just pick!)under MIT or GPL licenses.</pre>
+	<pre class="prettyprint lang-plain linenums">
+JUSTGAGE - <a href="http://justgage.com/">http://justgage.com/</a>
+
+JustGage is released under MIT license. Feel free to use it and modify it in any way you find suitable.</pre>
+	<pre class="prettyprint lang-plain linenums">
+PARSLEY - <a href="http://parsleyjs.org/">http://parsleyjs.org/</a>
+
+Parsley is open source, MIT licensed, and developed to help everyone. It will stay that way.</pre>
+	<pre class="prettyprint lang-plain linenums">
+RAPHAEL - <a href="http://raphaeljs.com/">http://raphaeljs.com/</a>
+
+Copyright &copy; 2008 Dmitry Baranovskiy under MIT license</pre>
+
+	<pre class="prettyprint lang-plain linenums">
+jLayout - <a href="http://www.bramstein.com/projects/jlayout/jquery-plugin.html">http://www.bramstein.com/projects/jlayout/jquery-plugin.html</a>
+</pre>
+
+	<pre class="prettyprint lang-plain linenums">
+jVectorMap - <a href="http://jvectormap.com/">http://jvectormap.com</a>
+</pre>
+
+	<pre class="prettyprint lang-plain linenums">
+jquery-ui-map - <a href="https://code.google.com/p/jquery-ui-map/">https://code.google.com/p/jquery-ui-map</a>
+
+MIT License
+</pre>
+	<div>
+		&nbsp;</div>
+</div>
+<hr>
+<p>
+	Once again, thank you so much for purchasing this theme. As I said at the beginning, I&#39;d be glad to help you if you have any questions relating to this theme. No guarantees, but I&#39;ll do my best to assist. If you have a more general question relating to the themes on ThemeForest, you might consider visiting the forums and asking your question in the &quot;Item Discussion&quot; section.</p>
+<p>
+	<strong>Matej Drlicka - matodrlicka@gmail.com</strong></p>
+</section>
+
+<section id="changelog">
+	<div class="page-header"><h3>Changelog</h3><hr class="notop"></div>
+	<pre class="prettyprint lang-plain linenums">
+The Kamarel v. 1.2
+
+	Added "white-space: nowrap" to TitleLine heading - thekamarel.css row 740
+
+	Mail page vertical/horizontal - added jLayout plugin
+
+	Carousel implemented at widgets category
+
+	AllWay Tabs tweaks - added 200px width support to tabs by setting class '.w-200'
+
+	Vector Maps added - jvectormaps plugin
+
+	Google Maps added - jquery ui map plugin
+
+	Added hero-unit example to typography page
+
+	Added Check list and Cross list to typography page
+
+	Fixed issues on table page
+
+	Fixed opacity issue on TitleLine in IE8
+
+	Top bar icons adjusted
+
+The Kamarel v. 1.1
+
+	thekamarel.css - Focused inputs border color changed to #bee147 - row 1627 (old color rgba(0,0,0,.4))
+
+	MasterActions - removed jquery plugin for animating box shadow on hover - actually it use css3 transitions - row 982 in thekamarel.css
+
+	Improved tabs jquery actions - row 100 in thekamarel.js
+
+	Added All-way tabs to Widgets Category - css changes are made on row 1052 in thekamarel.css
+
+	Titleline heading layout changes (only one heading now)
+
+	Fixed some bugs
+
+	Updated fontawesome to version 3.2.1
+
+	Fixed problem with placing anything else than titleLineCharts on the right side of TitleLine, you must use class .titleLineOnRight (example on widgets page with search bar) - thekamarel.css row 737
+
+	Minor changes of tablesorter css - theme.default.css row 19
+
+	Fixed some js errors
+
+	Added 3-level submenu example into "Example Pages" menu
+
+	Added Typography page (under Interface) - thekamarel.css row 3456
+	</pre>
+</section>
+
+
+
+    <hr />
+
+<footer>
+    <p>Copyright Tattek 2013 made with the <a href="http://rxa.li/documenter">Documenter v2.0</a></p>
+</footer>
+
+</div><!-- /container --> 
+
+<!-- Le javascript
+    ================================================== --> 
+<!-- Placed at the end of the document so the pages load faster --> 
+<script>document.createElement('section');var duration='500',easing='swing';</script>
+<script src="assets/js/jquery.js"></script> 
+<script src="assets/js/jquery.scrollTo.js"></script>
+<script src="assets/js/jquery.easing.js"></script>
+<script src="assets/js/scripts.js"></script> 
+<script src="assets/js/google-code-prettify/prettify.js"></script> 
+<script src="assets/js/bootstrap-min.js"></script> 
+</body>
+</html>

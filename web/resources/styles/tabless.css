@@ -1,0 +1,99 @@
+html, body
+{
+    font-family: Arial, Verdana;
+    font-size: 81.2%;
+}
+
+#table1
+{
+    border-spacing: 0;
+    border-collapse: collapse;
+    box-shadow: 1px 1px 2px #eee;
+    border-raduis: 2px;
+    width: 100%;
+}
+#table1 th
+{
+    background-color: #f1f1f1;
+    padding: 8px 5px;
+    color: #666;
+}
+#table1 td
+{
+    padding: 3px 5px;
+    color: #fff;
+}
+#table1 tr:nth-child(odd)
+{
+    background-color: #f3f3f3;
+    border-bottom: 1px solid #ddd;
+    border-top: 1px solid #ddd;
+}
+#table1 tr:nth-child(even)
+{
+    background-color: #fff;
+}
+#table1 td span
+{
+    color: #777;
+}
+#table1 tr:hover
+{
+    background: #FFFFEA;
+}
+
+
+#table1 input[type='text'], select
+{
+    padding: 3px 5px;
+
+    border: 1px solid #ddd;
+}
+#msg
+{
+    color: #f00;
+    padding: 6px 10px;
+    text-align: center;
+    background-color: #ffffba;
+    margin: 5px 0;
+    border: 1px solid #eee;
+}
+#all
+{
+    width: 60%;
+}
+#table1 input[name='birthday']
+{
+    width: 70px;
+}
+.selectBox-dropdown
+{
+    width: 80px;
+}
+.hide
+{
+    visibility: hidden;
+    display: none;
+}
+.show
+{
+    visibility: visible;
+    display: block;
+}
+input[type='button']
+{
+    border-raduis: 2px;
+    padding: 5px;
+    color: #fff;
+    border: 0;
+    background-color: #32353A;
+    box-shadow: 0 1px 5px #ddd;
+}
+input[type='button']:hover
+{
+    background-color: #3F4551;
+}
+.error
+{
+    background-color: #FFD2D2;
+}

@@ -1,0 +1,312 @@
+<project name="abac" default="war" basedir=".">
+    <!--<project name="abac" default="war" basedir="103.4.147.139@dsi:~/Downloads/tomcat6.0.37/webapps">-->
+
+    <property file="${basedir}/build.properties"/>
+
+    <property name="app.name"      value="/abac"/>
+    <property name="app.path"      value="/${app.name}"/>
+    <property name="build.home"    value="${ant.build.path}"/>
+    <property name="dist.home"     value="${basedir}/dist"/>
+    <property name="docs.home"     value="${basedir}/docs"/>
+    <property name="src.home"      value="${basedir}/src"/>
+    <property name="lib.dir"       value="${basedir}/lib"/>
+    <property name="web.home"      value="${basedir}/web"/>
+    <property name="classes.home" value="${build.home}/WEB-INF/classes"/>
+    <property name="catalina.home"  value="${tomcat.home}"/>
+    <property file="${basedir}/build.properties"/>
+
+
+    <property name="compile.debug"       value="true"/>
+    <property name="compile.deprecation" value="false"/>
+    <property name="compile.optimize"    value="true"/>
+
+    <target name="options">
+        <echo message=""/>
+        <echo message="Available targets are:"/>
+        <echo message=""/>
+        <echo message="install   --> install application"/>
+        <echo message="remove    --> install application"/>
+        <echo message="prepare   --> prepare application"/>
+        <echo message="compile   --> Build the application"/>
+        <echo message="reports   --> Compile the jrxml files"/>
+        <echo message="lite-reload --> reload the application"/>
+        <echo message="clean     --> clean application"/>
+        <echo message="war       --> Build war for the application"/>
+        <echo message=""/>
+    </target>
+
+    <path id="compile.classpath">
+        <fileset dir="${lib.dir}">
+            <include name="*.jar"/>
+        </fileset>
+    </path>
+
+
+    <target name="clean"
+            description="Delete old build and dist directories">
+        <delete dir="${build.home}"/>
+        <delete dir="${dist.home}"/>
+    </target>
+
+    <target name="prepare" description="Reload JSP, Js and Css in Tomcat">
+
+        <!-- Create build directories as needed -->
+        <mkdir  dir="${build.home}"/>
+        <mkdir  dir="${build.home}/WEB-INF"/>
+        <mkdir  dir="${build.home}/WEB-INF/classes"/>
+        <mkdir  dir="${build.home}/WEB-INF/lib"/>
+
+        <!-- Copy static content of this web application -->
+        <copy todir="${build.home}">
+            <fileset dir="${web.home}"/>
+        </copy>
+
+        <!-- Copy external dependencies as required -->
+        <copy todir="${build.home}/WEB-INF/lib">
+            <fileset dir="${basedir}/lib" />
+        </copy>
+
+        <!-- Copy static files from external dependencies as needed -->
+        <copy  todir="${classes.home}">
+            <fileset dir="${src.home}" excludes="**/*.java"/>
+        </copy>
+    </target>
+
+
+    <target name="compile" depends="prepare,reports"
+            description="Compile Java sources">
+
+        <!-- Compile Java classes as necessary -->
+        <mkdir    dir="${build.home}/WEB-INF/classes"/>
+        <javac srcdir="${src.home}"
+               destdir="${build.home}/WEB-INF/classes"
+               debug="${compile.debug}"
+               deprecation="${compile.deprecation}"
+               optimize="${compile.optimize}"
+               includeantruntime="false">
+            <classpath refid="compile.classpath"/>
+        </javac>
+
+        <!-- Copy application resources -->
+        <copy  todir="${build.home}/WEB-INF/classes">
+            <fileset dir="${src.home}" excludes="**/*.java"/>
+        </copy>
+
+    </target>
+
+
+    <target name="reload" description="Reload application in Tomcat">
+
+        <reload   url="${tomcat.manager.url}"
+                  username="${tomcat.manager.username}"
+                  password="${tomcat.manager.password}"
+                  path="${app.name}"/>
+
+    </target>
+    <target name="lite-reload" depends="compile" description="Reload application in Tomcat">
+
+        <reload   url="${tomcat.manager.url}"
+                  username="${tomcat.manager.username}"
+                  password="${tomcat.manager.password}"
+                  path="${app.name}"/>
+
+    </target>
+
+
+    <target name="javadoc" depends="compile"
+            description="Create Javadoc API documentation">
+
+        <mkdir          dir="${dist.home}/docs/api"/>
+        <javadoc sourcepath="${src.home}"
+                 destdir="${dist.home}/docs/api"
+                 packagenames="*">
+            <classpath refid="compile.classpath"/>
+        </javadoc>
+    </target>
+
+    <target name="war" depends="clean,compile">
+        <mkdir dir="build"/>
+        <mkdir   dir="${dist.home}"/>
+        <war warfile="${dist.home}/abac3.war" webxml="${build.home}/WEB-INF/web.xml">
+            <fileset dir="${build.home}"/>
+        </war>
+    </target>
+
+    <target name="default" depends="war">
+        <antcall target="clean"/>
+    </target>
+
+    <target name="dist" depends="compile,javadoc"
+            description="Create binary distribution">
+
+        <!-- Copy documentation subdirectories -->
+        <mkdir   dir="${dist.home}/docs"/>
+        <copy    todir="${dist.home}/docs">
+            <fileset dir="${docs.home}"/>
+        </copy>
+
+        <!-- Create application JAR file -->
+        <jar jarfile="${dist.home}/${app.name}.war"
+             basedir="${build.home}"/>
+
+        <!-- Copy additional files to ${dist.home} as necessary -->
+
+    </target>
+
+
+    <target name="dev-war" depends="clean,compile">
+        <mkdir dir="build"/>
+        <war warfile="${dist.home}/${app.name}.war" webxml="${build.home}/WEB-INF/web.xml">
+            <fileset dir="${build.home}"/>
+        </war>
+        <copy todir="/home/anik/tomcat6/webapps"><fileset file="${dist.home}/${app.name}.war"/></copy>
+    </target>
+
+    <target name="remove" description="Remove application in Tomcat">
+
+        <remove   url="${tomcat.manager.url}"
+                  username="${tomcat.manager.username}"
+                  password="${tomcat.manager.password}"
+                  path="${app.name}"/>
+
+    </target>
+
+
+    <target name="install"   depends="compile" description="Install application to servlet container">
+        <install  url="${tomcat.manager.url}"
+                  username="${tomcat.manager.username}"
+                  password="${tomcat.manager.password}"
+                  path="${app.name}"
+                  war="file://${build.home}" />
+    </target>
+
+    <target name="list" description="List Tomcat applications">
+
+        <list     url="${tomcat.manager.url}"
+                  username="${tomcat.manager.username}"
+                  password="${tomcat.manager.password}"/>
+
+    </target>
+
+    <!--    <target name="deploy" depends="war" description="war file copy to 103.4.147.139">
+            <scp trust="true" file="${dist.home}/abac3.war"
+                 todir="dsi:_dynamic@103.4.147.139:/usr/tomcat6.0.37/webapps/"/>
+        </target>
+                 todir="dsi:_dynamic@103.4.147.139:/home/dsi/Downloads/tomcat6.0.37/webapps/"/>
+        </target>-->
+
+    <!-- ============================================================ -->
+    <!-- Reports -->
+    <!-- ============================================================ -->
+
+
+    <path id="jasper.classpath">
+        <fileset dir="${lib.dir}"/>
+    </path>
+
+    <taskdef name="jrc" classname="net.sf.jasperreports.ant.JRAntCompileTask">
+        <classpath refid="jasper.classpath"/>
+    </taskdef>
+
+    <target name="reports">
+        <jrc srcdir="${src.home}/reports"
+             destdir="${src.home}/jasper"
+             includes="*.jrxml" >
+            <classpath refid="jasper.classpath"/>
+        </jrc>
+    </target>
+
+    <!-- ============================================================ -->
+    <!-- Tomcat tasks -->
+    <!-- ============================================================ -->
+
+    <!--
+    <path id="catalina-ant-classpath">
+  <fileset dir="${catalina.home}/lib">
+    <include name="catalina-ant.jar"/>
+    <include name="tomcat-coyote.jar"/>
+    <include name="tomcat-util.jar"/>
+  </fileset>
+  <fileset dir="${catalina.home}/bin">
+    <include name="tomcat-juli.jar"/>
+  </fileset>
+</path>
+<taskdef name="deploy" classname="org.apache.catalina.ant.DeployTask" classpathref="catalina-ant-classpath"/>
+<taskdef name="undeploy" classname="org.apache.catalina.ant.UndeployTask" classpathref="catalina-ant-classpath"/>
+
+
+    <taskdef name="list" classname="org.apache.catalina.ant.ListTask">
+        <classpath refid="catalina-ant-classpath"/>
+    </taskdef>
+    -->
+    <!-- for tomcat 6-->
+
+    <taskdef name="install" classname="org.apache.catalina.ant.InstallTask">
+        <classpath>
+            <path location="${catalina.home}/lib/catalina-ant.jar"/>
+        </classpath>
+    </taskdef>
+    <taskdef name="remove" classname="org.apache.catalina.ant.UndeployTask">
+        <classpath>
+            <path location="${catalina.home}/lib/catalina-ant.jar"/>
+        </classpath>
+    </taskdef>
+    <taskdef name="reload" classname="org.apache.catalina.ant.ReloadTask">
+        <classpath>
+            <path location="${catalina.home}/lib/catalina-ant.jar"/>
+        </classpath>
+    </taskdef>
+    <taskdef name="list" classname="org.apache.catalina.ant.ListTask">
+        <classpath>
+            <path location="${catalina.home}/lib/catalina-ant.jar"/>
+        </classpath>
+    </taskdef>
+    <taskdef name="start" classname="org.apache.catalina.ant.StartTask">
+        <classpath>
+            <path location="${catalina.home}/lib/catalina-ant.jar"/>
+        </classpath>
+    </taskdef>
+    <taskdef name="stop" classname="org.apache.catalina.ant.StopTask">
+        <classpath>
+            <path location="${catalina.home}/lib/catalina-ant.jar"/>
+        </classpath>
+    </taskdef>
+
+
+    <!-- for tomcat 5 -->
+    <!--
+        <taskdef name="install" classname="org.apache.catalina.ant.InstallTask">
+            <classpath>
+                <path location="${catalina.home}/server/lib/catalina-ant.jar"/>
+            </classpath>
+        </taskdef>
+        <taskdef name="remove" classname="org.apache.catalina.ant.RemoveTask">
+            <classpath>
+                <path location="${catalina.home}/server/lib/catalina-ant.jar"/>
+            </classpath>
+        </taskdef>
+        <taskdef name="reload" classname="org.apache.catalina.ant.ReloadTask">
+            <classpath>
+                <path location="${catalina.home}/server/lib/catalina-ant.jar"/>
+            </classpath>
+        </taskdef>
+        <taskdef name="list" classname="org.apache.catalina.ant.ListTask">
+            <classpath>
+                <path location="${catalina.home}/server/lib/catalina-ant.jar"/>
+            </classpath>
+        </taskdef>
+        <taskdef name="start" classname="org.apache.catalina.ant.StartTask">
+            <classpath>
+                <path location="${catalina.home}/server/lib/catalina-ant.jar"/>
+            </classpath>
+        </taskdef>
+        <taskdef name="stop" classname="org.apache.catalina.ant.StopTask">
+            <classpath>
+                <path location="${catalina.home}/server/lib/catalina-ant.jar"/>
+            </classpath>
+        </taskdef>
+         -->
+
+
+</project>
+

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+<tiles-definitions>
+    <definition name="base.definition"
+        template="/WEB-INF/views/layout/layout.jsp">
+		<!-- <put-attribute name="title" value="" /> -->
+        <put-attribute name="header" value="/WEB-INF/views/layout/header.jsp" />
+        <put-attribute name="adminHeader" value="/WEB-INF/views/layout/admin_header.jsp" />
+        <put-attribute name="dashboard" value="/WEB-INF/views/layout/dashBoardAndBreadcrumb.jsp" />
+        <put-attribute name="subHeader" value="/WEB-INF/views/layout/sub_header.jsp" />
+        <put-attribute name="landingPageMainTab" value="/WEB-INF/views/layout/landingPageMainTab.jsp" />
+        <put-attribute name="message" value="/WEB-INF/views/message.jsp" />
+        <put-attribute name="body" value="" />
+        <put-attribute name="footer" value="/WEB-INF/views/layout/footer.jsp" />
+    </definition>
+
+    <definition name="base.demo.definition"
+                template="/WEB-INF/views/layout/layoutDemo.jsp">
+
+        <put-attribute name="body" value="" />
+        <put-attribute name="footerDemo" value="/WEB-INF/views/common/footer.jsp" />
+    </definition>
+
+
+
+	<definition name="admin.definition"
+        template="/WEB-INF/views/layout/layout.jsp">
+		<!-- <put-attribute name="title" value="" /> -->
+        <put-attribute name="header" value="/WEB-INF/views/layout/admin_header.jsp" />
+        <put-attribute name="body" value="" />
+        <put-attribute name="footer" value="/WEB-INF/views/layout/footer.jsp" />
+    </definition>
+
+    <definition name="login" extends="base.definition">
+        <put-attribute name="header" value="/WEB-INF/views/layout/login_header.jsp" />
+        <put-attribute name="body" value="/WEB-INF/views/login.jsp" />
+    </definition>
+
+    <definition name="admin/*" extends="base.definition">
+        <put-attribute name="body" value="/WEB-INF/views/admin/{1}.jsp" />
+    </definition>
+
+    <definition name="*/*" extends="base.definition">
+        <put-attribute name="body" value="/WEB-INF/views/{1}/{2}.jsp" />
+    </definition>
+
+    <definition name="accessDenied" extends="base.definition">
+        <put-attribute name="header" value="/WEB-INF/views/layout/login_header.jsp" />
+        <put-attribute name="body" value="/WEB-INF/views/accessDenied.jsp" />
+    </definition>
+
+<!--    <definition name="404" extends="base.definition">
+        <put-attribute name="header" value="/WEB-INF/views/layout/login_header.jsp" />
+        <put-attribute name="body" value="/WEB-INF/views/404.jsp" />
+    </definition>-->
+
+    <definition name="index" extends="base.definition">
+        <put-attribute name="header" value="/WEB-INF/views/layout/login_header.jsp" />
+        <put-attribute name="body" value="/WEB-INF/views/index.jsp" />
+    </definition>
+
+    <definition name="admin/transactions" extends="base.definition">
+        <put-attribute name="body" value="/WEB-INF/views/admin/transactions.jsp" />
+    </definition>
+    
+    <definition name="admin/resetPassword" extends="base.definition">
+        <put-attribute name="header" value="/WEB-INF/views/layout/login_header.jsp" />
+        <put-attribute name="body" value="/WEB-INF/views/admin/resetPassword.jsp" />
+    </definition>
+
+    <definition name="admin/emailRecovery" extends="base.definition">
+        <put-attribute name="header" value="/WEB-INF/views/layout/login_header.jsp" />
+        <put-attribute name="body" value="/WEB-INF/views/admin/emailRecovery.jsp" />
+    </definition>
+
+<!--     <definition name="existingReputationalReview" extends="base.definition"> 
+    	<put-attribute name="body" value="/WEB-INF/views/common/existingReputationalReview.jsp"/>
+    </definition> -->
+
+    <!--
+    <definition name="*.htiles" extends="layouts_home_tiles">
+        <put-attribute name="content"   value="/WEB-INF/views/{1}.jsp" />
+    </definition>
+    <definition name="*/*.htiles" extends="layouts_home_tiles">
+        <put-attribute name="content"   value="/WEB-INF/views/{1}/{2}.jsp" />
+    </definition>
+    <definition name="*/*/*.htiles" extends="layouts_home_tiles">
+        <put-attribute name="content"   value="/WEB-INF/views/{1}/{2}/{3}.jsp" />
+    </definition>
+    <definition name="*/*/*/*.htiles" extends="layouts_home_tiles">
+        <put-attribute name="content"   value="/WEB-INF/views/{1}/{2}/{3}/{4}.jsp" />
+    </definition>
+     -->
+    <definition name="common/home" extends="base.demo.definition">
+        <put-attribute name="body" value="/WEB-INF/views/common/home.jsp" />
+    </definition>
+    <definition name="common/feature" extends="base.demo.definition">
+        <put-attribute name="body" value="/WEB-INF/views/common/feature.jsp" />
+    </definition>
+    <definition name="common/support" extends="base.demo.definition">
+        <put-attribute name="body" value="/WEB-INF/views/common/support.jsp" />
+    </definition>
+    <definition name="common/about" extends="base.demo.definition">
+        <put-attribute name="body" value="/WEB-INF/views/common/about.jsp" />
+    </definition>
+    <definition name="common/contact" extends="base.demo.definition">
+        <put-attribute name="body" value="/WEB-INF/views/common/contact.jsp" />
+    </definition>
+    <definition name="common/registration" extends="base.definition">
+        <put-attribute name="header" value="/WEB-INF/views/layout/login_header.jsp" />
+        <put-attribute name="body" value="/WEB-INF/views/common/registration.jsp" />
+    </definition>
+
+</tiles-definitions>
