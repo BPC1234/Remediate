@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="audit_trail_information" language="groovy" pageWidth="595" pageHeight="842" columnWidth="575" leftMargin="10" rightMargin="10" topMargin="10" bottomMargin="10" uuid="e4b32765-7c8f-4439-9ac0-1df06aad575a">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["/jasper/"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="auditTrailList" class="java.util.List">
+		<fieldDescription><![CDATA[auditTrailList]]></fieldDescription>
+	</field>
+	<field name="tab1" class="java.lang.String">
+		<fieldDescription><![CDATA[tab1]]></fieldDescription>
+	</field>
+	<field name="tab1Selected" class="java.lang.String">
+		<fieldDescription><![CDATA[tab1Selected]]></fieldDescription>
+	</field>
+	<field name="tab2" class="java.lang.String">
+		<fieldDescription><![CDATA[tab2]]></fieldDescription>
+	</field>
+	<field name="tab2Selected" class="java.lang.String">
+		<fieldDescription><![CDATA[tab2Selected]]></fieldDescription>
+	</field>
+	<field name="tab3" class="java.lang.String">
+		<fieldDescription><![CDATA[tab3]]></fieldDescription>
+	</field>
+	<field name="tab3Selected" class="java.lang.String">
+		<fieldDescription><![CDATA[tab3Selected]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="43" splitType="Stretch">
+			<rectangle radius="10">
+				<reportElement uuid="a5b4b860-0ae1-4dd7-a085-53270fa6cc59" x="3" y="0" width="144" height="42" backcolor="#E6E6E6"/>
+			</rectangle>
+			<rectangle radius="10">
+				<reportElement uuid="7c52e5df-ac9f-46e8-b38f-96cb3eec2c05" x="150" y="0" width="144" height="42" backcolor="#E6E6E6"/>
+			</rectangle>
+			<rectangle radius="10">
+				<reportElement uuid="03518fe2-1263-4599-9948-5bbb4d2fe6d9" x="297" y="0" width="144" height="42" backcolor="#FFFFFF"/>
+			</rectangle>
+			<textField hyperlinkType="LocalAnchor">
+				<reportElement uuid="41ef7be3-f497-47fe-9bc7-7961164facae" x="5" y="-6" width="140" height="42" forecolor="#000000"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font isBold="true" isStrikeThrough="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tab1}]]></textFieldExpression>
+				<hyperlinkAnchorExpression><![CDATA["tab1"]]></hyperlinkAnchorExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="false" hyperlinkType="LocalAnchor">
+				<reportElement uuid="2834ce27-7b6e-4db7-8119-2d3dc7402fc0" mode="Transparent" x="153" y="-6" width="141" height="42" forecolor="#000000" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="SansSerif" size="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tab2}]]></textFieldExpression>
+				<hyperlinkAnchorExpression><![CDATA["tab2"]]></hyperlinkAnchorExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="false" hyperlinkType="LocalAnchor">
+				<reportElement uuid="dc70fad3-5b4b-48e9-ac75-dee0183e477b" mode="Transparent" x="300" y="-6" width="139" height="42" forecolor="#000000" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="SansSerif" size="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tab3Selected}]]></textFieldExpression>
+				<anchorNameExpression><![CDATA["tab3"]]></anchorNameExpression>
+				<hyperlinkAnchorExpression><![CDATA["tab3"]]></hyperlinkAnchorExpression>
+			</textField>
+			<rectangle>
+				<reportElement uuid="73b182e1-f068-407e-85bc-b3306aca167d" x="4" y="36" width="551" height="7"/>
+				<graphicElement>
+					<pen lineColor="#FFFFFF"/>
+				</graphicElement>
+			</rectangle>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="102" splitType="Stretch">
+			<subreport>
+				<reportElement uuid="3315c22b-c301-4e74-b533-7b866c90fd92" x="0" y="0" width="575" height="102"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{auditTrailList})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "audit_trail_data.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+</jasperReport>

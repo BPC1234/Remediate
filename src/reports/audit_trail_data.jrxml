@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="audit_trail_data" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2d0ef2c7-685a-4b05-9809-facfa46ce04f">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="changeAction" class="java.lang.String">
+		<fieldDescription><![CDATA[changeAction]]></fieldDescription>
+	</field>
+	<field name="changeAuthor" class="java.lang.String">
+		<fieldDescription><![CDATA[changeAuthor]]></fieldDescription>
+	</field>
+	<field name="changeDate" class="java.util.Date">
+		<fieldDescription><![CDATA[changeDate]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="4d972513-2844-4a6c-95c2-0aecfe0c13b6" x="0" y="0" width="100" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="5df97008-da37-4a07-a6ec-b86c3ea82982" x="100" y="0" width="79" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[User]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="396b9987-1218-425e-9bc9-369a2c6f9731" x="231" y="0" width="140" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Action]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="19" splitType="Stretch">
+			<rectangle>
+				<reportElement uuid="14ae88e4-cf44-4587-af18-d060ff140b7c" x="233" y="1" width="276" height="17" backcolor="#B8B8B8"/>
+				<graphicElement>
+					<pen lineColor="#FFFFFF"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="57741285-fb84-4fcc-99ff-52fbae6f2b2c" x="102" y="1" width="130" height="17" backcolor="#E8E8E8"/>
+				<graphicElement>
+					<pen lineColor="#FFFFFF"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="de1817ba-3ffb-4109-ae90-c3b94a3b199c" x="2" y="1" width="99" height="17" backcolor="#B8B8B8"/>
+				<graphicElement>
+					<pen lineColor="#FFFFFF"/>
+				</graphicElement>
+			</rectangle>
+			<textField>
+				<reportElement uuid="b4c691b8-a784-4e29-a01f-5c4d449a095c" x="233" y="1" width="276" height="17" backcolor="#7E7575"/>
+				<textElement>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{changeAction}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="68648127-7de6-4c54-b2c4-d15a26e2e9d2" x="102" y="1" width="130" height="17" backcolor="#E3CCCC"/>
+				<textElement>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{changeAuthor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="3198f437-e758-4836-91e5-9d2358e20c81" x="2" y="1" width="99" height="17" backcolor="#FFFFFF"/>
+				<textElement>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{changeDate}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

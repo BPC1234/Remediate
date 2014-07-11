@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="employee_information" language="groovy" pageWidth="595" pageHeight="842" columnWidth="575" leftMargin="10" rightMargin="10" topMargin="5" bottomMargin="10" uuid="472c07e3-e415-4eb6-872b-b88afa8fa519">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="subTab1Selected" class="java.lang.String">
+		<fieldDescription><![CDATA[subTab1Selected]]></fieldDescription>
+	</field>
+	<field name="subTab3Selected" class="java.lang.String">
+		<fieldDescription><![CDATA[subTab3Selected]]></fieldDescription>
+	</field>
+	<field name="subTab4" class="java.lang.String">
+		<fieldDescription><![CDATA[subTab4]]></fieldDescription>
+	</field>
+	<field name="subTab1" class="java.lang.String">
+		<fieldDescription><![CDATA[subTab1]]></fieldDescription>
+	</field>
+	<field name="value" class="java.lang.String">
+		<fieldDescription><![CDATA[value]]></fieldDescription>
+	</field>
+	<field name="header" class="java.lang.String">
+		<fieldDescription><![CDATA[header]]></fieldDescription>
+	</field>
+	<field name="subTab2" class="java.lang.String">
+		<fieldDescription><![CDATA[subTab2]]></fieldDescription>
+	</field>
+	<field name="subTab2Selected" class="java.lang.String">
+		<fieldDescription><![CDATA[subTab2Selected]]></fieldDescription>
+	</field>
+	<field name="subTab4Selected" class="java.lang.String">
+		<fieldDescription><![CDATA[subTab4Selected]]></fieldDescription>
+	</field>
+	<field name="subTab3" class="java.lang.String">
+		<fieldDescription><![CDATA[subTab3]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="43" splitType="Stretch">
+			<rectangle radius="10">
+				<reportElement uuid="e00ae538-f599-463b-9fc3-29059960e74a" x="3" y="0" width="124" height="42"/>
+			</rectangle>
+			<rectangle radius="10">
+				<reportElement uuid="45926b12-9603-4b51-b74a-df688855dd4f" x="130" y="0" width="124" height="42" backcolor="#E6E6E6"/>
+			</rectangle>
+			<rectangle radius="10">
+				<reportElement uuid="80fa31e6-ee8f-488b-8b95-4cffd7a74abb" x="257" y="0" width="129" height="42" backcolor="#E6E6E6"/>
+			</rectangle>
+			<textField hyperlinkType="LocalAnchor">
+				<reportElement uuid="74917503-ddfe-4239-9bd6-6421b9be4e9b" x="5" y="-6" width="120" height="42" forecolor="#000000"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font isBold="true" isStrikeThrough="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{subTab1Selected}]]></textFieldExpression>
+				<anchorNameExpression><![CDATA["subTab1"]]></anchorNameExpression>
+				<hyperlinkAnchorExpression><![CDATA["subTab1"]]></hyperlinkAnchorExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="false" hyperlinkType="LocalAnchor">
+				<reportElement uuid="a674a7c7-5055-4560-aa96-8f1e7c30c9f6" mode="Transparent" x="133" y="-6" width="120" height="42" forecolor="#000000" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="SansSerif" size="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{subTab2}]]></textFieldExpression>
+				<hyperlinkAnchorExpression><![CDATA["subTab2"]]></hyperlinkAnchorExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="false" hyperlinkType="LocalAnchor">
+				<reportElement uuid="226a980c-27f5-44e0-bc8c-62bd1a883358" mode="Transparent" x="259" y="-6" width="125" height="42" forecolor="#000000" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="SansSerif" size="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{subTab3}]]></textFieldExpression>
+				<hyperlinkAnchorExpression><![CDATA["subTab3"]]></hyperlinkAnchorExpression>
+			</textField>
+			<rectangle radius="10">
+				<reportElement uuid="7b773f04-8a89-4ef7-8c9a-03443df503f3" x="389" y="0" width="129" height="42" backcolor="#E6E6E6"/>
+			</rectangle>
+			<textField pattern="" isBlankWhenNull="false" hyperlinkType="LocalAnchor">
+				<reportElement uuid="15db13f8-9ac0-45ed-9e0e-3a78e61596d7" mode="Transparent" x="391" y="-6" width="125" height="42" forecolor="#000000" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="SansSerif" size="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{subTab4}]]></textFieldExpression>
+				<hyperlinkAnchorExpression><![CDATA["subTab4"]]></hyperlinkAnchorExpression>
+			</textField>
+			<rectangle>
+				<reportElement uuid="982655d3-711d-4799-82e0-d669afc17a2a" x="0" y="36" width="555" height="7"/>
+				<graphicElement>
+					<pen lineColor="#FFFFFF"/>
+				</graphicElement>
+			</rectangle>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="16" splitType="Stretch">
+			<rectangle>
+				<reportElement uuid="091f61a4-253a-4e82-b21b-387dbd61ab82" x="2" y="2" width="248" height="12" backcolor="#B8B8B8"/>
+				<graphicElement>
+					<pen lineColor="#FFFFFF"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="ddb7db78-2995-4bf6-9be9-559505b30b40" x="253" y="2" width="265" height="12" backcolor="#E8E8E8"/>
+				<graphicElement>
+					<pen lineColor="#FFFFFF"/>
+				</graphicElement>
+			</rectangle>
+			<textField>
+				<reportElement uuid="8ba69e81-ff52-4447-8d0d-a32f678cf751" x="2" y="2" width="245" height="12" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Right" markup="none"/>
+				<textFieldExpression><![CDATA[$F{header}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="2871cc03-0843-4d3c-9ae9-3194f167b218" x="253" y="2" width="265" height="12" backcolor="#E3CCCC"/>
+				<textElement>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{value}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

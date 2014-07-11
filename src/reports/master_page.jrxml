@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="master_page" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="71c41f5e-0774-4c0a-8702-ee962b0338b8">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["/jasper/"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="transactionDetails" class="java.util.List">
+		<fieldDescription><![CDATA[transactionDetails]]></fieldDescription>
+	</field>
+	<field name="controls" class="java.util.List">
+		<fieldDescription><![CDATA[controls]]></fieldDescription>
+	</field>
+	<field name="proactiveTransactionAuditTrialList" class="java.util.List">
+		<fieldDescription><![CDATA[proactiveTransactionAuditTrialList]]></fieldDescription>
+	</field>
+	<field name="auditTrails" class="java.util.List">
+		<fieldDescription><![CDATA[auditTrails]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="782" splitType="Stretch">
+			<subreport>
+				<reportElement uuid="e38ff5bc-4676-4e38-8a21-316acf57f229" x="0" y="0" width="555" height="782"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{transactionDetails})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "transaction_details.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="752">
+			<subreport>
+				<reportElement uuid="ab62e30b-bd20-4ac5-ae5c-863864e3e046" x="0" y="0" width="555" height="752"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{controls})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "control_information.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="782">
+			<subreport>
+				<reportElement uuid="717543c9-7b1c-4e88-8d1d-afbf738341ad" x="0" y="0" width="555" height="782"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{auditTrails})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "audit_trail_tab.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="20">
+			<textField>
+				<reportElement uuid="2a26c820-026d-4212-a473-29232fa3fdb0" x="435" y="0" width="80" height="20"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement uuid="397ab83a-89a6-4b4b-ac76-03d1ced2aec5" x="515" y="0" width="40" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

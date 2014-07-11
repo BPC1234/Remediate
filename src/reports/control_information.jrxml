@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="control_information" language="groovy" pageWidth="595" pageHeight="842" columnWidth="575" leftMargin="10" rightMargin="10" topMargin="10" bottomMargin="10" uuid="a06c22e3-f5cc-473f-aad5-2d326dd443ed">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<subDataset name="controlsDS" uuid="729e4773-a8cc-48b8-b0ca-1775415bbfb7"/>
+	<subDataset name="dataset1" uuid="5c8cb0a4-311e-4778-8107-21bc58002629"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["/jasper/"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="comment" class="java.lang.String">
+		<fieldDescription><![CDATA[comment]]></fieldDescription>
+	</field>
+	<field name="controls" class="java.util.List">
+		<fieldDescription><![CDATA[controls]]></fieldDescription>
+	</field>
+	<field name="involvedPerson" class="java.lang.String">
+		<fieldDescription><![CDATA[involvedPerson]]></fieldDescription>
+	</field>
+	<field name="tab1" class="java.lang.String">
+		<fieldDescription><![CDATA[tab1]]></fieldDescription>
+	</field>
+	<field name="tab1Selected" class="java.lang.String">
+		<fieldDescription><![CDATA[tab1Selected]]></fieldDescription>
+	</field>
+	<field name="tab2" class="java.lang.String">
+		<fieldDescription><![CDATA[tab2]]></fieldDescription>
+	</field>
+	<field name="tab2Selected" class="java.lang.String">
+		<fieldDescription><![CDATA[tab2Selected]]></fieldDescription>
+	</field>
+	<field name="tab3" class="java.lang.String">
+		<fieldDescription><![CDATA[tab3]]></fieldDescription>
+	</field>
+	<field name="tab3Selected" class="java.lang.String">
+		<fieldDescription><![CDATA[tab3Selected]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="43" splitType="Stretch">
+			<rectangle radius="10">
+				<reportElement uuid="85d905b0-9a5a-4424-959c-bcbdd3b2cd62" x="13" y="0" width="144" height="42" backcolor="#E6E6E6"/>
+			</rectangle>
+			<rectangle radius="10">
+				<reportElement uuid="7f089683-dac9-4128-a227-c5da0251b38e" x="160" y="0" width="144" height="42" backcolor="#FFFFFF"/>
+			</rectangle>
+			<rectangle radius="10">
+				<reportElement uuid="795bfd1d-dd3c-4861-a05d-4447949d6b08" x="307" y="0" width="144" height="42" backcolor="#E6E6E6"/>
+			</rectangle>
+			<textField hyperlinkType="LocalAnchor">
+				<reportElement uuid="75921a14-ad75-43c6-9f89-43c21fc54d9a" x="17" y="-6" width="140" height="42" forecolor="#000000"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font isBold="true" isStrikeThrough="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tab1}]]></textFieldExpression>
+				<hyperlinkAnchorExpression><![CDATA["tab1"]]></hyperlinkAnchorExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="false" hyperlinkType="LocalAnchor">
+				<reportElement uuid="a8b9b514-ae32-468a-ba41-837e9a9e4508" mode="Transparent" x="163" y="-6" width="141" height="42" forecolor="#000000" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="SansSerif" size="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tab2Selected}]]></textFieldExpression>
+				<anchorNameExpression><![CDATA["tab2"]]></anchorNameExpression>
+				<hyperlinkAnchorExpression><![CDATA["tab2"]]></hyperlinkAnchorExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="false" hyperlinkType="LocalAnchor">
+				<reportElement uuid="63baa96a-f42b-4507-acdd-0bbf25439263" mode="Transparent" x="310" y="-6" width="139" height="42" forecolor="#000000" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="SansSerif" size="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tab3}]]></textFieldExpression>
+				<hyperlinkAnchorExpression><![CDATA["tab3"]]></hyperlinkAnchorExpression>
+			</textField>
+			<rectangle>
+				<reportElement uuid="cd6cf17f-c270-4240-ad14-d9d7ea91bd6e" x="10" y="36" width="555" height="7"/>
+				<graphicElement>
+					<pen lineColor="#FFFFFF"/>
+				</graphicElement>
+			</rectangle>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="46" splitType="Stretch">
+			<subreport>
+				<reportElement uuid="0fdf3be2-d55a-488e-88a5-47b0c675b0a6" x="0" y="0" width="555" height="46"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{controls})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "control_check_boxes.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="178">
+			<rectangle>
+				<reportElement uuid="90eb872e-883c-4efc-b0a4-7f514d14d452" x="0" y="14" width="346" height="92"/>
+			</rectangle>
+			<textField>
+				<reportElement uuid="f048114a-a5c1-4f16-9a85-fba1de852467" x="4" y="18" width="342" height="88" forecolor="#000000"/>
+				<textElement>
+					<font fontName="SansSerif" size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{comment}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="7fee0b8a-793c-401f-b06d-7ab01bc8d7a6" x="4" y="130" width="117" height="20"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Involved Person:]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="d76c76a3-8193-4455-b8cc-31ec8746e79c" x="121" y="130" width="141" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{involvedPerson}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="6b0c836b-3b13-45a5-b34a-43c46b646a4c" x="0" y="0" width="81" height="14"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Comment:]]></text>
+			</staticText>
+		</band>
+	</detail>
+</jasperReport>
